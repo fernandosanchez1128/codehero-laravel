@@ -29,6 +29,29 @@
         });
     </script>
     <script>
+        function activateNivel (obj,fila,columna,name)
+        {
+            if (obj.checked == true)
+            {
+                if (columna > 1)
+                {
+                    elemento = document.getElementById(name + fila + "-" + columna);
+                    elemento.disabled = false;
+                }
+            }
+            else
+            {
+                if (columna > 1) {
+                    elemento = document.getElementById(name + fila + "-" + columna);
+                    elemento.disabled = true;
+                    elemento.placeholder = "";
+                    elemento.value = "";
+                }
+            }
+
+        }
+    </script>
+    <script>
         function mostrar_preg (num)
         {
             if (num == 1)
@@ -91,7 +114,7 @@
                                  element.disabled = false;
                                  element.placeholder = "nombre de la asignatura";
                              }
-                                 num_text = 11;
+                                 num_text = 12;
                                  for (i = 1; i <= num_text; i++) {
                                      var element = document.getElementById("grado" + num + "-" + i);
                                      element.disabled = false;
@@ -105,13 +128,13 @@
                             element.disabled = true;
                             element.placeholder = "otro";
                         }
-                        num_text = 11;
+                        num_text = 12;
                         for (i = 1; i <= num_text; i++) {
                             var element = document.getElementById("grado" + num + "-" + i);
                             element.disabled = true;
                         }
                     }
-                    }
+
                     break;
                 //procesos de formacion
                 case 3:
@@ -484,17 +507,28 @@
         </p>
         <p>
         <br>
-        12. Por Favor seleccione las asignaturas en las que enseña y digite los grados en los
-        que enseña
+        12. Por Favor seleccione las asignaturas en las que enseña y los grados en los que lo enseña.
+            en la casilla de abajo digite los niveles separados por un -.
         <br> <br>
        <table id = 'asignaturas'>
+                <tr>
+                    <td> Asignatura</td>
+                    <td> </td>
+                    <td align='center'> transicion</td>
+                    <td align='center'> 1°</td> <td align='center' >2°</td>
+                    <td align='center'> 3°</td> <td align='center'>4°</td>
+                    <td align='center'> 5°</td> <td align='center'>6°</td>
+                    <td align='center'> 7°</td> <td align='center'>8°</td>
+                    <td align='center'> 9°</td> <td align='center'> 10°</td>
+                    <td align='center'>11°</td>
+                </tr>
          <?php
                 $array = array("ciencias sociales", "Etica, democracia y valores", "ciencias Naturales", "Matemáticas",
                         "Tecnología e informática","fisica","Química","Humanidades y lenguaje",
                         "Segunda lengua: Ingles u otros", "Educacion fisica - Deportes",
                         "Artes: pintura, teatro, música,  manualidades","Religion", "escuela nueva");
 		$filas = 14;
-		$columnas = 13;
+		$columnas = 14;
 		for($t=1;$t<=$filas;$t++)
         {
             echo "<tr>";
@@ -525,7 +559,7 @@
                           //** creacion de los texts **//
                           $num = $y -2;
                           $name = "grado".$t."-".$num;
-                          echo "<td align='center'> <input type='checkbox' id= '$name' name='$name' value ='1' disabled > </td>";
+                          echo "<td align='center'> <input type='checkbox' id= '$name' name='$name' value ='1' disabled onclick = 'activateNivel(this,$t,$num,\"nivel\")'> </td>";
                       }
               }
 
@@ -540,7 +574,7 @@
                 }
                 else
                 {
-                    if ($y == 2)
+                    if ($y <= 3)
                     {
                         echo "<td> </td>";
                     }

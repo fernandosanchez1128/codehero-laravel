@@ -50,7 +50,7 @@ class EncuestaController extends BaseController {
             foreach ($asignaturas as $asignatura)
             {
                 $grado = "grado".$asignatura."-";
-                $num_text =11;
+                $num_text =12;
                 switch ($asignatura)
                 {
 

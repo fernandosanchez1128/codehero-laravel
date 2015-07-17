@@ -50,6 +50,7 @@ class EncuestaController extends BaseController {
             foreach ($asignaturas as $asignatura)
             {
                 $grado = "grado".$asignatura."-";
+                $nivel = "nivel".$asignatura."-";
                 $num_text =12;
                 switch ($asignatura)
                 {
@@ -59,101 +60,165 @@ class EncuestaController extends BaseController {
                         $encuesta->b5_a_sociales = 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_a_grado".$i;
+                            $name_area = "b5_a_grado".($i-1);
                             $grado_def = $grado.$i;
-                            //echo $grado_def;
-                            //echo (Input::get($grado_def));
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_a_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                     break;
                     case 2:
                         $encuesta->b5_b_etica= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_b_grado".$i;
+                            $name_area = "b5_b_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_b_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
                     case 3:
                         $encuesta->b5_c_ciencias = 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_c_grado".$i;
+                            $name_area = "b5_c_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_c_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
                     case 4:
                         $encuesta->b5_d_matematicas = 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_d_grado".$i;
+                            $name_area = "b5_d_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_d_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
                     case 5:
                         $encuesta->b5_e_tecnologia = 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_e_grado".$i;
+                            $name_area = "b5_e_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_e_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
                     case 6:
                         $encuesta->b5_f_fisica = 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_f_grado".$i;
+                            $name_area = "b5_f_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_f_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
                     case 7:
                         $encuesta->b5_g_quimica= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_g_grado".$i;
+                            $name_area = "b5_g_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_g_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
                     case 8:
                         $encuesta->b5_h_lenguaje= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_h_grado".$i;
+                            $name_area = "b5_h_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_h_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
                     case 9:
                         $encuesta->b5_i_seg_lengua= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_i_grado".$i;
+                            $name_area = "b5_i_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_i_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
                     case 10:
                         $encuesta->b5_j_deportes= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_j_grado".$i;
+                            $name_area = "b5_j_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_j_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
                     case 11 :
                         $encuesta->b5_k_artes= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_k_grado".$i;
+                            $name_area = "b5_k_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_k_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
 
@@ -161,27 +226,66 @@ class EncuestaController extends BaseController {
                         $encuesta->b5_l_religion= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_l_grado".$i;
+                            $name_area = "b5_l_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_l_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
                     case 13:
-                        $encuesta->b5_m_otro= Input::get('otra_asig');
+                        $encuesta->b5_m_escuela_nueva=1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_m_grado".$i;
+                            $name_area = "b5_m_grado".($i-1);
                             $grado_def = $grado.$i;
                             $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_m_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
                         }
                         break;
+                    case 14:
+                        $encuesta->b5_n_otra_asig1 = Input::get ('otra_asig14');
+                        for($i=1;$i<=$num_text;$i++)
+                        {
+                            $name_area = "b5_n_grado".($i-1);
+                            $grado_def = $grado.$i;
+                            $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_n_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
+                        }
+                    break;
+
                     default:
-                        $encuesta->b5_n_escuela_nueva = 1;
-                        $encuesta->b5_n_jornada = Input::get("nueva");
+                        $encuesta->b5_o_otra_asig2 = Input::get ('otra_asig15');
+                        for($i=1;$i<=$num_text;$i++)
+                        {
+                            $name_area = "b5_o_grado".($i-1);
+                            $grado_def = $grado.$i;
+                            $encuesta->$name_area = Input::get($grado_def);
+                            $name_nivel = "b5_o_nivel".$i;
+                            $nivel_input = $nivel.$i;
+                            if ($i!=12)
+                            {
+                                $encuesta->$name_nivel = Input::get ($nivel_input);
+                            }
+                        }
                 }
             }
         }
-        /** ******************** inicio tabla de pregunta 12  *********************** **/
+        /** ******************** fin tabla de pregunta 12  *********************** **/
 
         /** ******************** inicio tabla de pregunta 13  *********************** **/
         $areas= Input::get('areas');

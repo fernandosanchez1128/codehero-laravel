@@ -14,6 +14,7 @@
 
 <!-- activateText (obj,num,name,caso): script para activar los campos cuando su
     respectivo checkbutton ha sido presionado -->
+
     <script>
         $(document).ready(function(){
             $('#cnameIE').change(function(){
@@ -108,9 +109,9 @@
                 case 2:
                     //areas
                      if (obj.checked == true) {
-                             if (num ==14)
+                             if (num >=14)
                              {
-                                 var element = document.getElementById("otra_asig");
+                                 var element = document.getElementById("otra_asig"+ num);
                                  element.disabled = false;
                                  element.placeholder = "nombre de la asignatura";
                              }
@@ -122,9 +123,9 @@
                              }
                     else
                     {
-                        if (num ==14)
+                        if (num >=14)
                         {
-                            var element = document.getElementById("otra_asig");
+                            var element = document.getElementById("otra_asig"+ num);
                             element.disabled = true;
                             element.placeholder = "otro";
                         }
@@ -132,6 +133,7 @@
                         for (i = 1; i <= num_text; i++) {
                             var element = document.getElementById("grado" + num + "-" + i);
                             element.disabled = true;
+                            element.checked = false;
                         }
                     }
 
@@ -315,7 +317,7 @@
             /** ---------------------------------------------------------------------------------------------------- **/
             /** validacion de  las asignaturas enseñadas **/
             var flag = true;
-            var element = document.getElementById("otra_asig");
+            var element = document.getElementById("otra_asig14");
             if (!element.disabled)
             {
                 if(element.value == "")
@@ -527,7 +529,7 @@
                         "Tecnología e informática","fisica","Química","Humanidades y lenguaje",
                         "Segunda lengua: Ingles u otros", "Educacion fisica - Deportes",
                         "Artes: pintura, teatro, música,  manualidades","Religion", "escuela nueva");
-		$filas = 14;
+		$filas = 15;
 		$columnas = 14;
 		for($t=1;$t<=$filas;$t++)
         {
@@ -536,9 +538,10 @@
             {
               if ($y == 1)
               {
-                  if ($t == 14)
+                  if ($t >= 14)
                   {
-                      echo "<td style = 'width:150px'>  <input type='text' id='otra_asig' name='otra_asig'  placeholder='otro' disabled> </td>";
+                      $name_asig = "otra_asig".$t;
+                      echo "<td style = 'width:150px'>  <input type='text' id='$name_asig' name='$name_asig'  placeholder='otro' disabled> </td>";
                   }
                   else
                   {

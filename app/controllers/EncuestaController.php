@@ -8,10 +8,10 @@ class EncuestaController extends BaseController {
     {
         echo ("inicio");
         $encuesta = new Encuesta;
-        //$encuesta->fecha = Input::get ('fecha');
+        $encuesta->fecha = Input::get ('fecha');
         //echo (Input::get ('num_aplicacion'));
-        //$encuesta->no_aplicacion = Input::get ('num_aplicacion');
-        //$encuesta->nombre_profesional= Input::get ('name_profesional');
+        $encuesta->no_aplicacion = Input::get ('num_aplicacion');
+        $encuesta->nombre_profesional= Input::get ('name_profesional');
 		$encuesta->a1_nombre_ie = Input::get('nameIE');
         $encuesta->a2_nombre_sede = Input::get('nameSede');
         $encuesta->a3_nombre_docente = Input::get('nameDocente');
@@ -25,19 +25,7 @@ class EncuestaController extends BaseController {
         $encuesta->b1_c_nivel_post= Input::get('nivelPostgrado');
         $encuesta->b2_exp_docencia= Input::get('experiencia');
         $encuesta->b3_exp_sede= Input::get('experienciaSede');
-        $jornadas = Input::get('jornada');
-        if (count ($jornadas) == 2)
-        {
-            $encuesta->b4_a_manana = 1;
-            $encuesta->b4_b_tarde = 1;
-        }
-        else {
-            if ($jornadas[0] == 1) {
-                $encuesta->b4_a_manana = 1;
-            } else {
-                $encuesta->b4_b_tarde = 1;
-            }
-        }
+        $encuesta->b4_jornada = Input::get('jornada');
 
         /** ******************** inicio tabla de pregunta 12  *********************** **/
 
@@ -61,7 +49,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_a_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_a_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -76,7 +64,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_b_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_b_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -91,7 +79,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_c_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_c_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -106,7 +94,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_d_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_d_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -121,7 +109,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_e_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_e_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -136,7 +124,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_f_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_f_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -151,7 +139,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_g_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_g_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -166,7 +154,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_h_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_h_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -181,7 +169,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_i_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_i_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -196,7 +184,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_j_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_j_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -211,7 +199,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_k_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_k_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -227,7 +215,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_l_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_l_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -242,7 +230,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_m_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_m_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -257,7 +245,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_n_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_n_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -273,7 +261,7 @@ class EncuestaController extends BaseController {
                         for($i=1;$i<=$num_text;$i++)
                         {
                             $name_area = "b5_o_grado".($i-1);
-                            $grado_def = $grado.$i;
+                            $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
                             $name_nivel = "b5_o_nivel".$i;
                             $nivel_input = $nivel.$i;
@@ -362,32 +350,35 @@ class EncuestaController extends BaseController {
 
 
 
-//        $encuesta->c3_exposicion = Input::get('exposicion');
-//        $encuesta->c3_debate = Input::get('debate');
-//        $encuesta->c3_mesa_redonda = Input::get('mesa');
-//        $encuesta->c3_foro = Input::get('foro');
-//        $encuesta->c3_juego= Input::get('juego');
-//        $encuesta->c3_asamblea= Input::get('asamblea');
-//        $encuesta->c3_estrategia_ondas = Input::get('estrate_onda');
-//        $encuesta->c3_proyecto_aula= Input::get('proyec_aula');
-//        $encuesta->c3_expo_problema = Input::get('expo_problema');
-//        $encuesta->c3_jornada_seguimiento = Input::get('jornada_seguimiento');
-//        $encuesta->c3_monitor= Input::get('monitor');
-//        /** --------------------------------------------------------------------  **/
-//        /** insercion de las acciones tomadas **/
-//
-//        $encuesta->c4_separar_pelea = Input::get('separar_pelea');
-//        $encuesta->c4_dialogo = Input::get('dialogo');
-//        $encuesta->c4_trab_escrito = Input::get('trab_escrito');
-//        $encuesta->c4_ayuda = Input::get('ayuda ');
-//        $encuesta->c4_acuerdo = Input::get('acuerdo');
-//        $encuesta->c4_sanciones = Input::get('sanciones');
-//        $encuesta->c4_mediadores = Input::get('mediadores');
-//        $encuesta->c4_anotar_observaciones= Input::get('anotar_observaciones');
-//        $encuesta->c4_redes_apoyo = Input::get('redes_apoyo');
-//        $encuesta->c4_reunion = Input::get('reunion');
-//        $encuesta->c4_citacion= Input::get('citacion');
-//
+        $encuesta->c3_exposicion = Input::get('exposicion');
+        $encuesta->c3_debate = Input::get('debate');
+        $encuesta->c3_mesa_redonda = Input::get('mesa');
+        $encuesta->c3_foro = Input::get('foro');
+        $encuesta->c3_juego= Input::get('juego');
+        $encuesta->c3_asamblea= Input::get('asamblea');
+        $encuesta->c3_estrategia_ondas = Input::get('estrate_onda');
+        $encuesta->c3_proyecto_aula= Input::get('proyec_aula');
+        $encuesta->c3_expo_problema = Input::get('expo_problema');
+        $encuesta->c3_jornada_seguimiento = Input::get('jornada_seguimiento');
+        $encuesta->c3_monitor= Input::get('monitor');
+        /** --------------------------------------------------------------------  **/
+        /** insercion de las acciones tomadas **/
+
+        $encuesta->c4_separar_pelea = Input::get('separar_pelea');
+        $encuesta->c4_dialogo = Input::get('dialogo');
+        $encuesta->c4_trab_escrito = Input::get('trab_escrito');
+        $encuesta->c4_ayuda = Input::get('ayuda ');
+        $encuesta->c4_acuerdo = Input::get('acuerdo');
+        $encuesta->c4_sanciones = Input::get('sanciones');
+        $encuesta->c4_mediadores = Input::get('mediadores');
+        $encuesta->c4_anotar_observaciones= Input::get('anotar_observaciones');
+        $encuesta->c4_redes_apoyo = Input::get('redes_apoyo');
+        $encuesta->c4_reunion = Input::get('reunion');
+        $encuesta->c4_citacion= Input::get('citacion');
+
+        $encuesta->c5_aplica = Input::get ('group1');
+        $encuesta->c5_aplicacion = Input::get ('aplicacion');
+
        $encuesta->save();
 
 //        /** --------------------------------------------------------------------- */

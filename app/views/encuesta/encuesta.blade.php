@@ -34,7 +34,7 @@
         {
             if (obj.checked == true)
             {
-                if (columna > 1)
+                if (columna >= 1)
                 {
                     elemento = document.getElementById(name + fila + "-" + columna);
                     elemento.disabled = false;
@@ -116,7 +116,7 @@
                                  element.placeholder = "nombre de la asignatura";
                              }
                                  num_text = 12;
-                                 for (i = 1; i <= num_text; i++) {
+                                 for (i = 0; i < num_text; i++) {
                                      var element = document.getElementById("grado" + num + "-" + i);
                                      element.disabled = false;
                                  }
@@ -130,10 +130,16 @@
                             element.placeholder = "otro";
                         }
                         num_text = 12;
-                        for (i = 1; i <= num_text; i++) {
+                        for (i = 0; i < num_text; i++) {
                             var element = document.getElementById("grado" + num + "-" + i);
                             element.disabled = true;
                             element.checked = false;
+                            if (i!=11)
+                            {
+                                nivel =document.getElementById("nivel" + num + "-" + (i+1));
+                                nivel.value = "";
+                                nivel.disabled = true;
+                            }
                         }
                     }
 
@@ -554,13 +560,13 @@
               {
                       if ($y == 2)
                       {
-                          $num = $y -2;
+                          $num = $y -3;
                           echo "<td align='center'> <input type='checkbox' name='asignaturas[]' value='$t' onclick = 'activateText(this, $t,\"grado\",2)'> </td>";
                       }
                       else
                       {
                           //** creacion de los texts **//
-                          $num = $y -2;
+                          $num = $y -3;
                           $name = "grado".$t."-".$num;
                           echo "<td align='center'> <input type='checkbox' id= '$name' name='$name' value ='1' disabled onclick = 'activateNivel(this,$t,$num,\"nivel\")'> </td>";
                       }
@@ -584,7 +590,7 @@
                     else
                     {
                         //** creacion de los texts **//
-                        $num = $y -2;
+                        $num = $y -3;
                         $name = "nivel".$t."-".$num;
                         echo "<td align='center'> <input type='text' id= '$name' name='$name' disabled > </td>";
                     }

@@ -527,7 +527,7 @@
                 <tr>
                     <td> Asignatura</td>
                     <td> </td>
-                    <td align='center'> transicion</td>
+                    <td align='center' style = 'width:45px'> transicion</td>
                     <td align='center'> 1°</td> <td align='center' >2°</td>
                     <td align='center'> 3°</td> <td align='center'>4°</td>
                     <td align='center'> 5°</td> <td align='center'>6°</td>
@@ -539,74 +539,101 @@
                 $array = array("ciencias sociales", "Etica, democracia y valores", "ciencias Naturales", "Matemáticas",
                         "Tecnología e informática","fisica","Química","Humanidades y lenguaje",
                         "Segunda lengua: Ingles u otros", "Educacion fisica - Deportes",
-                        "Artes: pintura, teatro, música,  manualidades","Religion", "escuela nueva");
-		$filas = 15;
+                        "Artes: pintura, teatro, música,  manualidades","Religion");
+		$filas = 14;
 		$columnas = 14;
 		for($t=1;$t<=$filas;$t++)
         {
-            echo "<tr>";
-            for($y=1;$y<=$columnas;$y++)
-            {
-              if ($y == 1)
-              {
-                  if ($t >= 14)
-                  {
-                      $name_asig = "otra_asig".$t;
-                      echo "<td style = 'width:150px'>  <input type='text' id='$name_asig' name='$name_asig'  placeholder='otro' disabled> </td>";
-                  }
-                  else
-                  {
-                      $fila = $t-1;
-                      echo "<td style = 'width:150px'>  $array[$fila]  </td>";
-                  }
 
-              }
-              else
-              {
-                      if ($y == 2)
+                echo "<tr>";
+                for($y=1;$y<=$columnas;$y++)
+                {
+                  if ($y == 1)
+                  {
+                      if ($t > 12)
                       {
-                          $num = $y -3;
-                          echo "<td align='center'> <input type='checkbox' name='asignaturas[]' value='$t' onclick = 'activateText(this, $t,\"grado\",2)'> </td>";
+                          $name_asig = "otra_asig".$t;
+                          echo "<td style = 'width:150px'>  <input type='text' id='$name_asig' name='$name_asig'  placeholder='otro' disabled> </td>";
                       }
                       else
                       {
-                          //** creacion de los texts **//
-                          $num = $y -3;
-                          $name = "grado".$t."-".$num;
-                          echo "<td align='center'> <input type='checkbox' id= '$name' name='$name' value ='1' disabled onclick = 'activateNivel(this,$t,$num,\"nivel\")'> </td>";
+                          $fila = $t-1;
+                          echo "<td style = 'width:150px'>  $array[$fila]  </td>";
                       }
-              }
 
-	        }
-	        echo "</tr>";
-            echo "<tr>";
-            for($y=1;$y<=$columnas;$y++)
-            {
-                if ($y == 1)
-                {
-                    echo "<td style = 'width:150px'>   </td>";
+                  }
+                  else
+                  {
+                          if ($y == 2)
+                          {
+                              $num = $y -3;
+                              echo "<td align='center'> <input type='checkbox' name='asignaturas[]' value='$t' onclick = 'activateText(this, $t,\"grado\",2)'> </td>";
+                          }
+                          else
+                          {
+                              //** creacion de los checkbox **//
+                              $num = $y -3;
+                              $name = "grado".$t."-".$num;
+                              echo "<td align='center'> <input type='checkbox' id= '$name' name='$name' value ='1' disabled onclick = 'activateNivel(this,$t,$num,\"nivel\")'> </td>";
+                          }
+                  }
+
                 }
-                else
+                echo "</tr>";
+                echo "<tr>";
+                for($y=1;$y<=$columnas;$y++)
                 {
-                    if ($y <= 3)
+                    if ($y == 1)
                     {
-                        echo "<td> </td>";
+                        echo "<td style = 'width:150px'>   </td>";
                     }
                     else
                     {
-                        //** creacion de los texts **//
-                        $num = $y -3;
-                        $name = "nivel".$t."-".$num;
-                        echo "<td align='center'> <input type='text' id= '$name' name='$name' disabled > </td>";
+                        if ($y <= 3)
+                        {
+                            echo "<td> </td>";
+                        }
+                        else
+                        {
+                            //** creacion de los texts **//
+
+                            $num = $y -3;
+                            $name = "nivel".$t."-".$num;
+                            echo "<td align='center'> <input type='text' id= '$name' name='$name' disabled > </td>";
+                        }
                     }
                 }
-            }
-            echo "</tr>";
-	    }
+                echo "</tr>";
+
+        }
 
         ?>
 	
 	</table>
+            <table>
+                <tr>
+                    <td style = 'width:150px'>  Primera infancia </td>
+
+                    <td align='center'> <input type='checkbox' name='asignaturas[]' value='15'> </td>
+                    <td align='center' style = 'width:45px'></td>
+
+                    <td style = 'width:600px' > <input type='text' id= 'observacion' name='observacion' disabled > </td>
+                </tr>
+                </table>
+
+                <table>
+                <tr>
+                    <td style = 'width:150px'>  escuela nueva  </td>
+
+                    <td align='center'> <input type='checkbox' name='asignaturas[]' value='16'>  </td>
+                    <td align='center' style = 'width:45px'></td>
+                    <td align='center'> <input type='checkbox' id= 'nueva_primaria' name='nueva_primaria' disabled > primaria </td>
+                    <td align='center'> <input type='text' id= 'grados_prim' name='grados_prim' disabled > </td>
+                    <td align='center'> <input type='checkbox' id= 'nueva_bachillerato' name='nueva_bachillerato' disabled > bachillerato </td>
+                    <td align='center'> <input type='text' id= 'grados_bachillerato' name='grados_bachillerato' disabled > </td>
+                </tr>
+                </table>
+
 
 	</p>
 

@@ -225,22 +225,8 @@ class EncuestaController extends BaseController {
                             }
                         }
                         break;
+
                     case 13:
-                        $encuesta->b5_m_escuela_nueva=1;
-                        for($i=1;$i<=$num_text;$i++)
-                        {
-                            $name_area = "b5_m_grado".($i-1);
-                            $grado_def = $grado.($i-1);
-                            $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_m_nivel".$i;
-                            $nivel_input = $nivel.$i;
-                            if ($i!=12)
-                            {
-                                $encuesta->$name_nivel = Input::get ($nivel_input);
-                            }
-                        }
-                        break;
-                    case 14:
                         $encuesta->b5_n_otra_asig1 = Input::get ('otra_asig14');
                         for($i=1;$i<=$num_text;$i++)
                         {
@@ -256,7 +242,7 @@ class EncuestaController extends BaseController {
                         }
                     break;
 
-                    default:
+                    case 14:
                         $encuesta->b5_o_otra_asig2 = Input::get ('otra_asig15');
                         for($i=1;$i<=$num_text;$i++)
                         {
@@ -270,6 +256,10 @@ class EncuestaController extends BaseController {
                                 $encuesta->$name_nivel = Input::get ($nivel_input);
                             }
                         }
+                    case 15:
+                        break;
+                    default:
+
                 }
             }
         }
@@ -391,8 +381,8 @@ class EncuestaController extends BaseController {
      */
     public function nuevoUsuario()
     {
-        $instituciones = instituciones::all();
-        $profesionales = Profesionales::all();
+        $instituciones = DB::table('instituciones')->orderBy('name')->get();
+        $profesionales = DB::table('profesionales')->orderBy('nombre')->get();
         return View::make('encuesta.encuesta',array ('instituciones' => $instituciones,'profesionales' => $profesionales));
     }
 

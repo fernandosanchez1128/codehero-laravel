@@ -367,7 +367,7 @@ class EncuestaController extends BaseController {
         $encuesta->c4_separar_pelea = Input::get('separar_pelea');
         $encuesta->c4_dialogo = Input::get('dialogo');
         $encuesta->c4_trab_escrito = Input::get('trab_escrito');
-        $encuesta->c4_ayuda = Input::get('ayuda ');
+        $encuesta->c4_ayuda = Input::get('ayuda');
         $encuesta->c4_acuerdo = Input::get('acuerdo');
         $encuesta->c4_sanciones = Input::get('sanciones');
         $encuesta->c4_mediadores = Input::get('mediadores');
@@ -380,6 +380,7 @@ class EncuestaController extends BaseController {
         $encuesta->c5_aplicacion = Input::get ('aplicacion');
 
        $encuesta->save();
+        //return Redirect::to('encuesta');
 
 //        /** --------------------------------------------------------------------- */
 
@@ -391,9 +392,16 @@ class EncuestaController extends BaseController {
     public function nuevoUsuario()
     {
         $instituciones = instituciones::all();
-        return View::make('encuesta.encuesta',array ('instituciones' => $instituciones));
+        $profesionales = Profesionales::all();
+        return View::make('encuesta.encuesta',array ('instituciones' => $instituciones,'profesionales' => $profesionales));
     }
 
+    public function listar ()
+    {
+        $encuestas = Encuesta::all();
+        return View::make('encuesta.listar')->with('encuestas', $encuestas);
+
+    }
     /**
      * Crear el usuario nuevo
      */

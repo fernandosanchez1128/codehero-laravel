@@ -16,6 +16,7 @@ Route::get('dropdown', function(){
     $sedes = Instituciones::find($id)->sedes;
     return $sedes->lists('name', 'id');
 });
+
 Route::get('usuarios/{id}', array('uses'=>'UsuariosController@verUsuario'));
 // esta ruta contiene un parámetro llamado {id}, que sirve para indicar el id del usuario que deseamos buscar
 // este parámetro es pasado al controlador, podemos colocar todos los parámetros que necesitemos
@@ -23,4 +24,5 @@ Route::get('usuarios/{id}', array('uses'=>'UsuariosController@verUsuario'));
 // si el parámetro es opcional se colocar un signo de interrogación {parámetro?}
 Route::get('encuesta', array('uses'=>'EncuestaController@nuevoUsuario'));
 Route::post('encuesta/store', array('uses'=>'EncuestaController@mostrarUsuarios'));
+Route::get('encuesta/listado', array('uses'=>'EncuestaController@listar'));
 ?>

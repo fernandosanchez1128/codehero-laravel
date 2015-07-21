@@ -225,10 +225,10 @@
                         'nameIE': {required:true,min:1},
                         'nameSede': "required",
                         'nameDocente': "required",
-                        'edad': {required : true , min:18, max:100},
+                        'edad': {required : true , min:14, max:800},
                         'municipio' : "required",
-                        'experiencia' : {required:true, min:1,max:50},
-                        'experienciaSede' : {required:true, min:1, max:50},
+                        'experiencia' : {required:true, min:1,max:60},
+                        'experienciaSede' : {required:true, min:1, max:60},
                         'nombreTitulo[]':"required",
                         'duracion[]' : "required digits",
                         'tiempo_atras[]' : "required digits",
@@ -243,21 +243,21 @@
                         'nameSede': "Por favor, indica el nombre de la sede",
                         'nameDocente': "Por favor digita tu nombre",
                         'edad' : {
-                            required: "Por favor digite su edad",
-                            min: "debe ser mayor de edad",
-                            max: "la cantidad maxima de años permitidos es 100"
+                            required: "Por favor digite su edad (numero)",
+                            min: "debe ser mayor de 14 años",
+                            max: "la cantidad maxima de años permitidos es 80"
                         },
                         'municipio' : "Por favor digite el municipio donde vive ej: Cali",
                         'experiencia' :
                         {
                             required: "Por digite los años de experiencia como profesor en la sede (numero)",
                             min:"los años deben ser mayor a igual a 1",
-                            max:"los años deben ser menor o igual a 50"
+                            max:"los años deben ser menor o igual a 60"
                         },
                         'experienciaSede' : {
                             required: "Por digite los años de experiencia como profesor en la sede (numero)",
                             min:"los años deben ser mayor a igual a 1",
-                            max:"los años deben ser menor o igual a 50"
+                            max:"los años deben ser menor o igual a 60"
                         },
                         'nombreTitulo[]':"",
                         'duracion[]' : "",
@@ -414,7 +414,7 @@
     <h1>Encuesta De Caracterizacion De Los Docentes </h1>
     <h3>Las siguientes preguntas van dirigidas a profesores de los grados que participan
         del proceso de formación ofrecido por la línea de Convivencia y Ciudadanía del Macroproyecto</h3    >
-        <form id="frmContact" action= "encuesta/store" method = "post" onsubmit = "return validarForm()">
+        <form id="frmContact" autocomplete="off" action= "encuesta/store" method = "post" onsubmit = "return validarForm()">
         <fieldset>
         <legend>Datos Demográficos</legend>
             <p>
@@ -429,7 +429,11 @@
             </p>
             <p>
                 <label for="cname_profesional">1. Nombre del profesional</label>
-                <input id="cname_profesional" name="name_profesional" minlength="2" maxlength = "25" type="text" value = "fernando" >
+                <select id="cname_profesional" name="name_profesional" >
+                    @foreach($profesionales as $profesional)
+                        <option value="{{$profesional->id}}">{{$profesional->nombre}}</option>
+                    @endforeach
+                </select>
             </p>
             <p>
                 <label for="cnameIE">1. Nombre de la IE</label>
@@ -449,18 +453,19 @@
             </p>
         <p>
           <label for="cnameDocente">3. Nombre del Docente (required)</label>
-          <input id="cnameDocente" type="text" minlength="2" name="nameDocente"  value = "fernando" >
+          <input id="cnameDocente" type="text" minlength="2" name="nameDocente" >
         </p>
         <p>
           <label for="cedad"> 4. Edad (required)</label>
-          <input id="cedad" type="number"  name="edad" value = "22">
+          <input id="cedad" type="number"  name="edad">
         </p>
         <p>
           <label for="cmunicipio"> 6. Municipio Donde Vive</label>
-          <input id="cmunicipio" type="text"  name="municipio" value = "cali" >
+          <input id="cmunicipio" type="text"  name="municipio" >
         </p>
         <p>
-          7. Estado Civil
+          <label for="estado_civil"> 7. Estado Civil</label>
+
           <select id="cestado" name="estado" >
           <option value = "1"> Soltero </option>
           <option value = "2"> Casado </option>
@@ -478,7 +483,7 @@
           <table id= "escol" >
         <tr>
             <td> <input type="radio"  name="escolaridad" value="tecnico"  checked onclick = "activateText(this, 1, 'tit',1)">Tecnico </td>
-            <td> <input id = "tit1" type="text" style = 'float:right;' name="nombreTitulo[]" value="ssas" required> </td>
+            <td> <input id = "tit1" type="text" style = 'float:right;' name="nombreTitulo[]" placeholder = "nombre del titulo" required> </td>
         </tr>
         <tr>
         <td> <input type="radio" name="escolaridad" value="estudiante" onclick= "activateText(this, 2,'tit',1)">Universidad sin terminar</td>
@@ -501,11 +506,11 @@
         </p>
         <p>
           <label for="cexperiencia">9. ¿Cuantos años lleva laborando como docente?</label>
-          <input id="cexperiencia" type="number" name="experiencia" value = "20">
+          <input id="cexperiencia" type="number" name="experiencia" >
         </p>
         <p>
           <label for="cexperienciaSede">10. ¿Cuantos años lleva laborando como docente en la sede?</label>
-          <input id="cexperienciaSede" type="number" name="experienciaSede"  value = "15" required>
+          <input id="cexperienciaSede" type="number" name="experienciaSede" required>
         </p>
         <p>
           <label for="cjornada">11. ¿Dentro de la sede educativa, en qué jornada o jornadas labora?</label>

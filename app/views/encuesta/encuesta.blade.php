@@ -543,15 +543,15 @@
             </p>
         <p>
           <label for="cnameDocente">3. Nombre del Docente (required)</label>
-          <input id="cnameDocente" type="text" minlength="2" value ="fernando" name="nameDocente" >
+          <input id="cnameDocente" type="text" minlength="2" name="nameDocente" >
         </p>
         <p>
           <label for="cedad"> 4. Edad (required)</label>
-          <input id="cedad" type="number" value = "20" name="edad">
+          <input id="cedad" type="number"  name="edad">
         </p>
         <p>
           <label for="cmunicipio"> 6. Municipio Donde Vive</label>
-          <input id="cmunicipio" type="text"  name="municipio" value = "Cali" >
+          <input id="cmunicipio" type="text"  name="municipio" >
         </p>
         <p>
           <label for="estado_civil"> 7. Estado Civil</label>

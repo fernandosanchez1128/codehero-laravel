@@ -16,6 +16,10 @@ Route::get('dropdown', function(){
     $sedes = Instituciones::find($id)->sedes;
     return $sedes->lists('name', 'id');
 });
+Route::get('index', function()
+{
+    return Redirect::to('encuesta');
+});
 
 Route::get('usuarios/{id}', array('uses'=>'UsuariosController@verUsuario'));
 // esta ruta contiene un parámetro llamado {id}, que sirve para indicar el id del usuario que deseamos buscar

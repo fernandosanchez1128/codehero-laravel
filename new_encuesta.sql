@@ -1,7 +1,8 @@
 drop table if exists encuesta;
 create table encuesta 
 (
-	id  int primary key auto_increment , 
+	id  int primary key auto_increment,
+	id_encuesta varchar(40),
 	fecha date,
 	no_aplicacion integer,
 	nombre_profesional varchar (40),
@@ -343,64 +344,17 @@ create table encuesta
 	b5_l_grado11 integer default '0',
 	b5_l_nivel11 varchar (40) default '',
 	
+	b5_m_prim_infancia boolean default '0',
+	b5_m_observaciones text,
 	
-	b5_m_escuela_nueva boolean default '0',
-	b5_m_grado0 integer default '0',
-	b5_m_grado1 integer default '0',
-	b5_m_nivel1 varchar (40) default '',
-	b5_m_grado2 integer default '0',
-	b5_m_nivel2 varchar (40) default '',
-	b5_m_grado3 integer default '0',
-	b5_m_nivel3 varchar (40) default '',
-	b5_m_grado4 integer default '0',
-	b5_m_nivel4 varchar (40) default '',
-	b5_m_grado5 integer default '0',
-	b5_m_nivel5 varchar (40) default '',
-	b5_m_grado6 integer default '0',
-	b5_m_nivel6 varchar (40) default '',
-	b5_m_grado7 integer default '0',
-	b5_m_nivel7 varchar (40) default '',
-	b5_m_grado8 integer default '0',
-	b5_m_nivel8 varchar (40) default '',
-	b5_m_grado9 integer default '0',
-	b5_m_nivel9 varchar (40) default '',
-	b5_m_grado10 integer default '0',
-	b5_m_nivel10 varchar (40) default '',
-	b5_m_grado11 integer default '0',
-	b5_m_nivel11 varchar (40) default '',
-
-
+	b5_n_escuela_nueva boolean default '0',
+	b5_n_primaria boolean default '0',
+	b5_n_primaria_grados varchar(40) default '',
+	b5_n_bachillerato boolean default '0',
+	b5_n_bachillerato_grados varchar(40) default '',
 	
 	
-	b5_n_otra_asig1 varchar (20) default '',
-	b5_n_grado0 integer default '0',
-	b5_n_grado1 integer default '0',
-	b5_n_nivel1 varchar (40) default '',
-	b5_n_grado2 integer default '0',
-	b5_n_nivel2 varchar (40) default '',
-	b5_n_grado3 integer default '0',
-	b5_n_nivel3 varchar (40) default '',
-	b5_n_grado4 integer default '0',
-	b5_n_nivel4 varchar (40) default '',
-	b5_n_grado5 integer default '0',
-	b5_n_nivel5 varchar (40) default '',
-	b5_n_grado6 integer default '0',
-	b5_n_nivel6 varchar (40) default '',
-	b5_n_grado7 integer default '0',
-	b5_n_nivel7 varchar (40) default '',
-	b5_n_grado8 integer default '0',
-	b5_n_nivel8 varchar (40) default '',
-	b5_n_grado9 integer default '0',
-	b5_n_nivel9 varchar (40) default '',
-	b5_n_grado10 integer default '0',
-	b5_n_nivel10 varchar (40) default '',
-	b5_n_grado11 integer default '0',
-	b5_n_nivel11 varchar (40) default '',
-
-
-	
-	
-	b5_o_otra_asig2 varchar (20) default '',
+	b5_o_otra_asig1 varchar (20) default '',
 	b5_o_grado0 integer default '0',
 	b5_o_grado1 integer default '0',
 	b5_o_nivel1 varchar (40) default '',
@@ -424,6 +378,34 @@ create table encuesta
 	b5_o_nivel10 varchar (40) default '',
 	b5_o_grado11 integer default '0',
 	b5_o_nivel11 varchar (40) default '',
+
+
+	
+	
+	b5_p_otra_asig2 varchar (20) default '',
+	b5_p_grado0 integer default '0',
+	b5_p_grado1 integer default '0',
+	b5_p_nivel1 varchar (40) default '',
+	b5_p_grado2 integer default '0',
+	b5_p_nivel2 varchar (40) default '',
+	b5_p_grado3 integer default '0',
+	b5_p_nivel3 varchar (40) default '',
+	b5_p_grado4 integer default '0',
+	b5_p_nivel4 varchar (40) default '',
+	b5_p_grado5 integer default '0',
+	b5_p_nivel5 varchar (40) default '',
+	b5_p_grado6 integer default '0',
+	b5_p_nivel6 varchar (40) default '',
+	b5_p_grado7 integer default '0',
+	b5_p_nivel7 varchar (40) default '',
+	b5_p_grado8 integer default '0',
+	b5_p_nivel8 varchar (40) default '',
+	b5_p_grado9 integer default '0',
+	b5_p_nivel9 varchar (40) default '',
+	b5_p_grado10 integer default '0',
+	b5_p_nivel10 varchar (40) default '',
+	b5_p_grado11 integer default '0',
+	b5_p_nivel11 varchar (40) default '',
 
 	/** fin tabla pregunta 12 **/
 	/** inicio tabla pregunta 13 **/

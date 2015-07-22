@@ -14,7 +14,85 @@
 
 <!-- activateText (obj,num,name,caso): script para activar los campos cuando su
     respectivo checkbutton ha sido presionado -->
+    <script>
+        function grados_activate (obj,num)
+        {
+            if (num==1) {
+                if (obj.checked==true){
+                    elemento = document.getElementById("grados_prim");
+                    elemento.disabled = false;
+                    elemento.placeholder = "grados que enseña"
+                }
+                else{
+                    elemento = document.getElementById("grados_prim");
+                    elemento.disabled = true;
+                    elemento.placeholder = ""
+                    elemento.value = ""
 
+                }
+            }
+            else {
+                if (obj.checked==true){
+                    elemento = document.getElementById("grados_bachillerato");
+                    elemento.disabled = false;
+                    elemento.placeholder = "grados que enseña"
+                }
+                else{
+                    elemento = document.getElementById("grados_bachillerato");
+                    elemento.disabled = true;
+                    elemento.placeholder = ""
+                    elemento.value = ""
+
+                }
+            }
+
+        }
+
+    </script>
+    <script>
+        function activate (obj,num)
+        {
+            if (num== 15){
+                if (obj.checked == true) {
+                    elemento = document.getElementById("observacion");
+                    elemento.disabled = false;
+                    elemento.placeholder = "observaciones";
+                }
+                else{
+                    elemento = document.getElementById("observacion");
+                    elemento.disabled = true;
+                    elemento.placeholder = "";
+                    elemento.value = "";
+                }
+            }
+            else{
+                if (obj.checked == true) {
+                    elemento1 = document.getElementById("nueva_primaria");
+                    elemento2 = document.getElementById("nueva_bachillerato");
+                    elemento1.disabled = false;
+                    elemento2.disabled = false;
+
+                }
+                else{
+                    elemento1 = document.getElementById("nueva_primaria");
+                    elemento2 = document.getElementById("nueva_bachillerato");
+                    elemento1.disabled = true;
+                    elemento1.checked = false;
+                    elemento2.disabled = true;
+                    elemento2.checked = false;
+                    elemento3 = document.getElementById("grados_prim");
+                    elemento4 = document.getElementById("grados_bachillerato");
+                    elemento3.disabled = true;
+                    elemento4.disabled = true;
+                    elemento3.value = "";
+                    elemento4.value = "";
+                    elemento3.placeholder = "";
+                    elemento4.placeholder = "";
+                }
+
+            }
+        }
+    </script>
     <script>
         $(document).ready(function(){
             $('#cnameIE').change(function(){
@@ -42,7 +120,7 @@
             }
             else
             {
-                if (columna > 1) {
+                if (columna >= 1) {
                     elemento = document.getElementById(name + fila + "-" + columna);
                     elemento.disabled = true;
                     elemento.placeholder = "";
@@ -109,7 +187,7 @@
                 case 2:
                     //areas
                      if (obj.checked == true) {
-                             if (num >=14)
+                             if (num >=13)
                              {
                                  var element = document.getElementById("otra_asig"+ num);
                                  element.disabled = false;
@@ -123,7 +201,7 @@
                              }
                     else
                     {
-                        if (num >=14)
+                        if (num >=13)
                         {
                             var element = document.getElementById("otra_asig"+ num);
                             element.disabled = true;
@@ -331,6 +409,17 @@
                     flag = false;
                 }
             }
+            else{
+                var element = document.getElementById("otra_asig13");
+                if (!element.disabled)
+                {
+                    if(element.value == "")
+                    {
+                        flag = false;
+                    }
+                }
+
+            }
 
             /** ---------------------------------------------------------------------------------- **/
             /** ************************************ validacion de jornada *********************** **/
@@ -345,6 +434,7 @@
                     element.focus();
                     element.placeholder = "complete";
                     alert("debe digitar el nombre de la asignatura");
+                    element.focus();
 
                 }
                 else
@@ -453,15 +543,15 @@
             </p>
         <p>
           <label for="cnameDocente">3. Nombre del Docente (required)</label>
-          <input id="cnameDocente" type="text" minlength="2" name="nameDocente" >
+          <input id="cnameDocente" type="text" minlength="2" value ="fernando" name="nameDocente" >
         </p>
         <p>
           <label for="cedad"> 4. Edad (required)</label>
-          <input id="cedad" type="number"  name="edad">
+          <input id="cedad" type="number" value = "20" name="edad">
         </p>
         <p>
           <label for="cmunicipio"> 6. Municipio Donde Vive</label>
-          <input id="cmunicipio" type="text"  name="municipio" >
+          <input id="cmunicipio" type="text"  name="municipio" value = "Cali" >
         </p>
         <p>
           <label for="estado_civil"> 7. Estado Civil</label>
@@ -614,7 +704,7 @@
                 <tr>
                     <td style = 'width:150px'>  Primera infancia </td>
 
-                    <td align='center'> <input type='checkbox' name='asignaturas[]' value='15'> </td>
+                    <td align='center'> <input type='checkbox' name='asignaturas[]' value='15' onclick = "activate (this,15)"> </td>
                     <td align='center' style = 'width:45px'></td>
 
                     <td style = 'width:600px' > <input type='text' id= 'observacion' name='observacion' disabled > </td>
@@ -625,11 +715,11 @@
                 <tr>
                     <td style = 'width:150px'>  escuela nueva  </td>
 
-                    <td align='center'> <input type='checkbox' name='asignaturas[]' value='16'>  </td>
+                    <td align='center'> <input type='checkbox' name='asignaturas[]' value='16' onclick = "activate (this,16)">  </td>
                     <td align='center' style = 'width:45px'></td>
-                    <td align='center'> <input type='checkbox' id= 'nueva_primaria' name='nueva_primaria' disabled > primaria </td>
+                    <td align='center'> <input type='checkbox' id= 'nueva_primaria' name='nueva_primaria' value = '1' disabled onclick = "grados_activate (this,1)" > primaria </td>
                     <td align='center'> <input type='text' id= 'grados_prim' name='grados_prim' disabled > </td>
-                    <td align='center'> <input type='checkbox' id= 'nueva_bachillerato' name='nueva_bachillerato' disabled > bachillerato </td>
+                    <td align='center'> <input type='checkbox' id= 'nueva_bachillerato' name='nueva_bachillerato' value = '1' disabled onclick = "grados_activate (this,2)" > bachillerato </td>
                     <td align='center'> <input type='text' id= 'grados_bachillerato' name='grados_bachillerato' disabled > </td>
                 </tr>
                 </table>
@@ -662,39 +752,39 @@
 	<tr>
 		<td> Convivencia</td>
 		<td> <input  type="checkbox" name="areas[]" value="a" onclick = "activateText(this, 1, 'tiempo',3)" > </td>
-		<td> <input type="number" id="tiempo1" name="duracion[]"  min =1 max="50" required disabled> </td>
-		<td> <input type="number" id="tiem_fini1" name="tiempo_atras[]" min =1   required disabled> </td>
+		<td> <input type="number" id="tiempo1" name="duracion[]"  min =1 max="80" required disabled> </td>
+		<td> <input type="number" id="tiem_fini1" name="tiempo_atras[]" min =0   required disabled> </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 	<tr>
 		<td> Ciudadania y derechos humanos </td>
 		<td> <input type="checkbox" name="areas[]" value="b"  onclick = "activateText(this, 2, 'tiempo',3)" > </td>
-		<td> <input type="number" id="tiempo2" name="duracion[]" min =1 max="50" required disabled  > </td>
-		<td> <input type="number" id="tiem_fini2"  name="tiempo_atras[]" min =1  required disabled> </td>
+		<td> <input type="number" id="tiempo2" name="duracion[]" min =1 max="80" required disabled  > </td>
+		<td> <input type="number" id="tiem_fini2"  name="tiempo_atras[]" min =0  required disabled> </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 	<!-- ------------------------------------------------------------------------- -->
 	<tr>
 		<td> Sexualidad </td>
 		<td> <input type="checkbox" name="areas[]" value="c" onclick = "activateText(this, 3, 'tiempo',3)" > </td>
-		<td> <input type="number" id="tiempo3" name="duracion[]" min =1 max="50" required disabled > </td>
-		<td> <input type="number" id="tiem_fini3" name="tiempo_atras[]" min =1  required disabled> </td>
+		<td> <input type="number" id="tiempo3" name="duracion[]" min =1 max="80" required disabled > </td>
+		<td> <input type="number" id="tiem_fini3" name="tiempo_atras[]" min =0  required disabled> </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 	<!-- ------------------------------------------------------------------------- -->
 	<tr>
 		<td> Medio ambiente </td>
 		<td> <input type="checkbox" name="areas[]" value="d" onclick = "activateText(this, 4, 'tiempo',3)"> </td>
-		<td> <input type="number" id="tiempo4" name="duracion[]" min =1 max="50" required disabled > </td>
-		<td> <input type="number" id="tiem_fini4"  name="tiempo_atras[]" min =1  required disabled> </td>
+		<td> <input type="number" id="tiempo4" name="duracion[]" min =1 max="80" required disabled > </td>
+		<td> <input type="number" id="tiem_fini4"  name="tiempo_atras[]" min =0  required disabled> </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 	<!-- ------------------------------------------------------------------------- -->
 	<tr>
 		<td> Prevencion de consumo de sustancias psicoactivas </td>
 		<td> <input type="checkbox" name="areas[]" value="e" onclick = "activateText(this, 5, 'tiempo',3)"> </td>
-		<td> <input type="number" id="tiempo5"  name="duracion[]" min =1 max="50" required disabled > </td>
-		<td> <input type="number" id="tiem_fini5" name="tiempo_atras[]" min =1  required disabled > </td>
+		<td> <input type="number" id="tiempo5"  name="duracion[]" min =1 max="80" required disabled > </td>
+		<td> <input type="number" id="tiem_fini5" name="tiempo_atras[]" min =0  required disabled > </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 
@@ -702,16 +792,16 @@
 	<tr>
 		<td> Manejo de conflictos y/o mediación escolar </td>
 		<td> <input type="checkbox" name="areas[]" value="f" onclick = "activateText(this, 6, 'tiempo',3)" > </td>
-		<td> <input type="number" id="tiempo6" name="duracion[]" min =1 max="50" required disabled > </td>
-		<td> <input type="number" id="tiem_fini6" name="tiempo_atras[]" min =1 required disabled  > </td>
+		<td> <input type="number" id="tiempo6" name="duracion[]" min =1 max="80" required disabled > </td>
+		<td> <input type="number" id="tiem_fini6" name="tiempo_atras[]" min =0 required disabled  > </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 	<!-- ------------------------------------------------------------------------- -->
 	<tr>
 		<td> Manejo y prevencion de acoso escolar</td>
 		<td> <input type="checkbox" name="areas[]" value="g" onclick = "activateText(this, 7, 'tiempo',3)" > </td>
-		<td> <input type="number" id="tiempo7" name="duracion[]"  min =1 max="50"  required disabled> </td>
-		<td> <input type="number" id="tiem_fini7" name="tiempo_atras[]" min =1 required  disabled> </td>
+		<td> <input type="number" id="tiempo7" name="duracion[]"  min =1 max="80"  required disabled> </td>
+		<td> <input type="number" id="tiem_fini7" name="tiempo_atras[]" min =0 required  disabled> </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 </table>

@@ -740,7 +740,8 @@
 		<p align="justify" >
 		13. Seleccione, sí Ud, previo al desarrollo de esta
 		investigación ha participado en procesos de formación
-		e indique tiempo de duración y finalización
+		e indique tiempo de duración y finalización, en caso de
+        estar en proceso digite 0 en tiempo de finalización.
 		(Si ha realizado un diplomado que incluye todas las  temáticas marca solo una opción)
 		</p>
 		</td>

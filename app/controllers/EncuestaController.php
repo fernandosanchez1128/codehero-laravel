@@ -6,12 +6,10 @@ class EncuestaController extends BaseController {
      */
     public function mostrarUsuarios()
     {
-        $nameIE = Input::get('nameIE');
-        $num = DB::table('encuesta')->where('a1_nombre_ie','=',$nameIE)->count();
-        $sede = Input::get('nameSede');
+
         $encuesta = new Encuesta;
-        $id_encuesta = $sede."-".($num +1);
-        $encuesta->id_encuesta = $id_encuesta;
+
+        $encuesta->id_encuesta = Input::get('id_encuesta');
         $encuesta->fecha = Input::get ('fecha');
         //echo (Input::get ('num_aplicacion'));
         $encuesta->no_aplicacion = Input::get ('num_aplicacion');
@@ -23,13 +21,13 @@ class EncuestaController extends BaseController {
         $encuesta->a6_municipio = Input::get('municipio');
         $encuesta->a7_estado_civil = Input::get('estado');
 
-        $encuesta->b1_a_nivel= Input::get('escolaridad');
+        $encuesta->b8_a_nivel= Input::get('escolaridad');
         $titulos = Input::get('nombreTitulo');
-        $encuesta->b1_b_nom_titulo= $titulos[0];
-        $encuesta->b1_c_nivel_post= Input::get('nivelPostgrado');
-        $encuesta->b2_exp_docencia= Input::get('experiencia');
-        $encuesta->b3_exp_sede= Input::get('experienciaSede');
-        $encuesta->b4_jornada = Input::get('jornada');
+        $encuesta->b8_b_nom_titulo= $titulos[0];
+        $encuesta->b8_c_nivel_post= Input::get('nivelPostgrado');
+        $encuesta->b9_exp_docencia= Input::get('experiencia');
+        $encuesta->b10_exp_sede= Input::get('experienciaSede');
+        $encuesta->b11_jornada = Input::get('jornada');
 
         /** ******************** inicio tabla de pregunta 12  *********************** **/
 
@@ -49,13 +47,13 @@ class EncuestaController extends BaseController {
 
                     case 1:
                         echo ("preg 1");
-                        $encuesta->b5_a_sociales = 1;
+                        $encuesta->b12_a_sociales = 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_a_grado".($i-1);
+                            $name_area = "b12_a_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_a_nivel".$i;
+                            $name_nivel = "b12_a_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -64,13 +62,13 @@ class EncuestaController extends BaseController {
                         }
                     break;
                     case 2:
-                        $encuesta->b5_b_etica= 1;
+                        $encuesta->b12_b_etica= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_b_grado".($i-1);
+                            $name_area = "b12_b_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_b_nivel".$i;
+                            $name_nivel = "b12_b_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -79,13 +77,13 @@ class EncuestaController extends BaseController {
                         }
                         break;
                     case 3:
-                        $encuesta->b5_c_ciencias = 1;
+                        $encuesta->b12_c_ciencias = 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_c_grado".($i-1);
+                            $name_area = "b12_c_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_c_nivel".$i;
+                            $name_nivel = "b12_c_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -94,13 +92,13 @@ class EncuestaController extends BaseController {
                         }
                         break;
                     case 4:
-                        $encuesta->b5_d_matematicas = 1;
+                        $encuesta->b12_d_matematicas = 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_d_grado".($i-1);
+                            $name_area = "b12_d_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_d_nivel".$i;
+                            $name_nivel = "b12_d_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -109,13 +107,13 @@ class EncuestaController extends BaseController {
                         }
                         break;
                     case 5:
-                        $encuesta->b5_e_tecnologia = 1;
+                        $encuesta->b12_e_tecnologia = 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_e_grado".($i-1);
+                            $name_area = "b12_e_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_e_nivel".$i;
+                            $name_nivel = "b12_e_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -124,13 +122,13 @@ class EncuestaController extends BaseController {
                         }
                         break;
                     case 6:
-                        $encuesta->b5_f_fisica = 1;
+                        $encuesta->b12_f_fisica = 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_f_grado".($i-1);
+                            $name_area = "b12_f_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_f_nivel".$i;
+                            $name_nivel = "b12_f_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -139,13 +137,13 @@ class EncuestaController extends BaseController {
                         }
                         break;
                     case 7:
-                        $encuesta->b5_g_quimica= 1;
+                        $encuesta->b12_g_quimica= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_g_grado".($i-1);
+                            $name_area = "b12_g_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_g_nivel".$i;
+                            $name_nivel = "b12_g_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -154,13 +152,13 @@ class EncuestaController extends BaseController {
                         }
                         break;
                     case 8:
-                        $encuesta->b5_h_lenguaje= 1;
+                        $encuesta->b12_h_lenguaje= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_h_grado".($i-1);
+                            $name_area = "b12_h_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_h_nivel".$i;
+                            $name_nivel = "b12_h_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -169,13 +167,13 @@ class EncuestaController extends BaseController {
                         }
                         break;
                     case 9:
-                        $encuesta->b5_i_seg_lengua= 1;
+                        $encuesta->b12_i_seg_lengua= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_i_grado".($i-1);
+                            $name_area = "b12_i_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_i_nivel".$i;
+                            $name_nivel = "b12_i_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -184,13 +182,13 @@ class EncuestaController extends BaseController {
                         }
                         break;
                     case 10:
-                        $encuesta->b5_j_deportes= 1;
+                        $encuesta->b12_j_deportes= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_j_grado".($i-1);
+                            $name_area = "b12_j_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_j_nivel".$i;
+                            $name_nivel = "b12_j_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -199,13 +197,13 @@ class EncuestaController extends BaseController {
                         }
                         break;
                     case 11 :
-                        $encuesta->b5_k_artes= 1;
+                        $encuesta->b12_k_artes= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_k_grado".($i-1);
+                            $name_area = "b12_k_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_k_nivel".$i;
+                            $name_nivel = "b12_k_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -215,13 +213,13 @@ class EncuestaController extends BaseController {
                         break;
 
                     case 12:
-                        $encuesta->b5_l_religion= 1;
+                        $encuesta->b12_l_religion= 1;
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_l_grado".($i-1);
+                            $name_area = "b12_l_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_l_nivel".$i;
+                            $name_nivel = "b12_l_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -231,13 +229,13 @@ class EncuestaController extends BaseController {
                         break;
 
                     case 13:
-                        $encuesta->b5_o_otra_asig1 = Input::get ('otra_asig13');
+                        $encuesta->b12_o_otra_asig1 = Input::get ('otra_asig13');
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_o_grado".($i-1);
+                            $name_area = "b12_o_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_o_nivel".$i;
+                            $name_nivel = "b12_o_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -247,13 +245,13 @@ class EncuestaController extends BaseController {
                     break;
 
                     case 14:
-                        $encuesta->b5_p_otra_asig2 = Input::get ('otra_asig14');
+                        $encuesta->b12_p_otra_asig2 = Input::get ('otra_asig14');
                         for($i=1;$i<=$num_text;$i++)
                         {
-                            $name_area = "b5_p_grado".($i-1);
+                            $name_area = "b12_p_grado".($i-1);
                             $grado_def = $grado.($i-1);
                             $encuesta->$name_area = Input::get($grado_def);
-                            $name_nivel = "b5_p_nivel".$i;
+                            $name_nivel = "b12_p_nivel".$i;
                             $nivel_input = $nivel.$i;
                             if ($i!=12)
                             {
@@ -262,15 +260,15 @@ class EncuestaController extends BaseController {
                         }
                         break;
                     case 15:
-                        $encuesta->b5_m_prim_infancia = 1;
-                        $encuesta->b5_m_observaciones = Input::get ('observacion');
+                        $encuesta->b12_m_prim_infancia = 1;
+                        $encuesta->b12_m_observaciones = Input::get ('observacion');
                         break;
                     default:
-                        $encuesta->b5_n_escuela_nueva= 1;
-                        $encuesta->b5_n_primaria= Input::get ('nueva_primaria');
-                        $encuesta->b5_n_primaria_grados= Input::get ('grados_prim');
-                        $encuesta->b5_n_bachillerato= Input::get ('nueva_bachillerato');
-                        $encuesta->b5_n_bachillerato_grados = Input::get ('grados_bachillerato');
+                        $encuesta->b12_n_escuela_nueva= 1;
+                        $encuesta->b12_n_primaria= Input::get ('nueva_primaria');
+                        $encuesta->b12_n_primaria_grados= Input::get ('grados_prim');
+                        $encuesta->b12_n_bachillerato= Input::get ('nueva_bachillerato');
+                        $encuesta->b12_n_bachillerato_grados = Input::get ('grados_bachillerato');
 
 
                 }
@@ -299,9 +297,9 @@ class EncuestaController extends BaseController {
                     case "f": $name = 'mediacion'; break;
                     default : $name = 'acoso';
                 }
-                $nombre_area = 'c1_'.$area.'_'.$name;
-                $name_duracion ='c1_'.$area.'_'.'duracion';
-                $tiemp_fini ='c1_'.$area.'_'.'finalizo';
+                $nombre_area = 'c13_'.$area.'_'.$name;
+                $name_duracion ='c13_'.$area.'_'.'duracion';
+                $tiemp_fini ='c13_'.$area.'_'.'finalizo';
 
                 $encuesta->$nombre_area = 1;
                 $encuesta->$name_duracion = $duracion[$index];
@@ -335,12 +333,12 @@ class EncuestaController extends BaseController {
                     case "g": $name_es = 'pausa_activa'; $num = "7";break;
                     case "h": $name_es = 'juegos'; $num = "8";break;
                     case "i": $name_es = 'asamblea'; $num = "9"; break;
-                    case "j": $name_es = 'otro1'; $encuesta->c2_j_otro1_nombre = Input::get ('otros1');$num = "10";break;
-                    default : $name_es = 'otro2';$encuesta->c2_k_otro2_nombre = Input::get ('otros2');$num = "11";
+                    case "j": $name_es = 'otro1'; $encuesta->c15_j_otro1_nombre = Input::get ('otros1');$num = "10";break;
+                    default : $name_es = 'otro2';$encuesta->c15_k_otro2_nombre = Input::get ('otros2');$num = "11";
                 }
                 //echo("fin_for");
-                $nombre_area = 'c2_'.$estrategia.'_'.$name_es;
-                $name_frecuencia ='c2_'.$estrategia.'_'.'frecuencia';
+                $nombre_area = 'c15_'.$estrategia.'_'.$name_es;
+                $name_frecuencia ='c15_'.$estrategia.'_'.'frecuencia';
                 $encuesta->$nombre_area = 1;
                 $encuesta->$name_frecuencia = Input::get ('frecuencia'.$num);
                 $index++;
@@ -353,36 +351,36 @@ class EncuestaController extends BaseController {
 
 
 
-        $encuesta->c3_exposicion = Input::get('exposicion');
-        $encuesta->c3_debate = Input::get('debate');
-        $encuesta->c3_mesa_redonda = Input::get('mesa');
-        $encuesta->c3_foro = Input::get('foro');
-        $encuesta->c3_juego= Input::get('juego');
-        $encuesta->c3_asamblea= Input::get('asamblea');
-        $encuesta->c3_estrategia_ondas = Input::get('estrate_onda');
-        $encuesta->c3_proyecto_aula= Input::get('proyec_aula');
-        $encuesta->c3_expo_problema = Input::get('expo_problema');
-        $encuesta->c3_jornada_seguimiento = Input::get('jornada_seguimiento');
-        $encuesta->c3_monitor= Input::get('monitor');
+        $encuesta->c16_exposicion = Input::get('exposicion');
+        $encuesta->c16_debate = Input::get('debate');
+        $encuesta->c16_mesa_redonda = Input::get('mesa');
+        $encuesta->c16_foro = Input::get('foro');
+        $encuesta->c16_juego= Input::get('juego');
+        $encuesta->c16_asamblea= Input::get('asamblea');
+        $encuesta->c16_estrategia_ondas = Input::get('estrate_onda');
+        $encuesta->c16_proyecto_aula= Input::get('proyec_aula');
+        $encuesta->c16_expo_problema = Input::get('expo_problema');
+        $encuesta->c16_jornada_seguimiento = Input::get('jornada_seguimiento');
+        $encuesta->c16_monitor= Input::get('monitor');
         /** --------------------------------------------------------------------  **/
         /** insercion de las acciones tomadas **/
 
-        $encuesta->c4_separar_pelea = Input::get('separar_pelea');
-        $encuesta->c4_dialogo = Input::get('dialogo');
-        $encuesta->c4_trab_escrito = Input::get('trab_escrito');
-        $encuesta->c4_ayuda = Input::get('ayuda');
-        $encuesta->c4_acuerdo = Input::get('acuerdo');
-        $encuesta->c4_sanciones = Input::get('sanciones');
-        $encuesta->c4_mediadores = Input::get('mediadores');
-        $encuesta->c4_anotar_observaciones= Input::get('anotar_observaciones');
-        $encuesta->c4_redes_apoyo = Input::get('redes_apoyo');
-        $encuesta->c4_reunion = Input::get('reunion');
-        $encuesta->c4_citacion= Input::get('citacion');
+        $encuesta->c17_separar_pelea = Input::get('separar_pelea');
+        $encuesta->c17_dialogo = Input::get('dialogo');
+        $encuesta->c17_trab_escrito = Input::get('trab_escrito');
+        $encuesta->c17_ayuda = Input::get('ayuda');
+        $encuesta->c17_acuerdo = Input::get('acuerdo');
+        $encuesta->c17_sanciones = Input::get('sanciones');
+        $encuesta->c17_mediadores = Input::get('mediadores');
+        $encuesta->c17_anotar_observaciones= Input::get('anotar_observaciones');
+        $encuesta->c17_redes_apoyo = Input::get('redes_apoyo');
+        $encuesta->c17_reunion = Input::get('reunion');
+        $encuesta->c17_citacion= Input::get('citacion');
 
-        $encuesta->c5_aplica = Input::get ('group1');
-        $encuesta->c5_aplicacion = Input::get ('aplicacion');
+        $encuesta->c14_a_aplica = Input::get ('group1');
+        $encuesta->c14_b_aplicacion = Input::get ('aplicacion');
 
-       $encuesta->save();
+        $encuesta->save();
         //return Redirect::to('encuesta');
         echo "<script type='text/javascript'>alert('La encuesta ha sido almacenada con exito');</script>";
         return Redirect::to('encuesta');

@@ -299,6 +299,7 @@
                     event: "blur",rules:
                     {
                         'fecha' : {required:true, date:true},
+                        'id_encuesta':"required",
                         'name_profesional': "required",
                         'nameIE': {required:true,min:1},
                         'nameSede': "required",
@@ -310,12 +311,12 @@
                         'nombreTitulo[]':"required",
                         'duracion[]' : "required digits",
                         'tiempo_atras[]' : "required digits",
-                        'jornada[]': {required: true, minlength: 1},
-                        'estrategias[]': {required:true, minlength:3, maxlength:5}
+                        'jornada[]': {required: true, minlength: 1}
                     },
                     messages:
                     {
                         'fecha': "por favor seleccione una fecha",
+                        'id_encuesta': "por favor digite el identificador de la encuesta",
                         'name_profesional' :"por favor digite el nombre del profesional",
                         'nameIE': "Por favor seleccione una institucion",
                         'nameSede': "Por favor, indica el nombre de la sede",
@@ -340,11 +341,7 @@
                         'nombreTitulo[]':"",
                         'duracion[]' : "",
                         'tiempo_atras[]' : "",
-                        'jornada[]': "debe seleccionar al menos una de las dos jornadas",
-                        'estrategias[]': {
-                            minlength: "debes seleccionar 3 estrategias",
-                            required : "debes seleccionar 3 estrategias",
-                            maxlength:"debes seleccionar maximo 5"}
+                        'jornada[]': "debe seleccionar al menos una de las dos jornadas"
                     }
                 });
         });
@@ -362,7 +359,7 @@
         if (step == 1)
         {
 
-            return validator.element("#cname_profesional") && validator.element("#cfecha") && validator.element( "#cnameIE" ) && validator.element( "#cnameSede" ) && validator.element( "#cnameDocente" )
+            return validator.element("#cname_profesional") && validator.element("#cfecha") && validator.element ("#id_encuesta") && validator.element( "#cnameIE" ) && validator.element( "#cnameSede" ) && validator.element( "#cnameDocente" )
             && validator.element( "#cedad" ) && validator.element( "#cmunicipio" );
         }
         /** -------------------------------------------------------------------------------------------------------------------------------- **/
@@ -518,7 +515,11 @@
                 <input id="cnum_aplicacion1" name="num_aplicacion" type="radio" value = "2" >2
             </p>
             <p>
-                <label for="cname_profesional">1. Nombre del profesional</label>
+                <label for="cnum_aplicacion">Identificador de la encuesta</label>
+                <input id="id_encuesta" name = "id_encuesta" type="text" >
+            </p>
+            <p>
+                <label for="cname_profesional">Nombre del profesional</label>
                 <select id="cname_profesional" name="name_profesional" >
                     @foreach($profesionales as $profesional)
                         <option value="{{$profesional->id}}">{{$profesional->nombre}}</option>
@@ -813,6 +814,7 @@
 	  a.
 	  <input type="radio" name="group1" value="1" onclick = "mostrar_preg(1)"> Si
 	  <input type="radio" name="group1" value="0" onclick = "mostrar_preg(0)" checked> No
+        <input type="radio" name="group1" value="-2" onclick = "mostrar_preg(0)"> No aplica
 	  <p id="opcional" display = None>
 	  b.	¿De qué manera y en qué momentos los aplica?
 	  <textarea name="aplicacion"></textarea>
@@ -944,85 +946,97 @@
                 <td>Cada 15 días</td>
                 <td>Una vez al mes</td>
                 <td>Este mes no la he realizado</td>
+                <td>No responde</td>
 
             </tr>
             <tr>
                 <td><p> a.	Exposiciones </p></td>
-                <td align="center"> <input type = "radio" name="exposicion" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="exposicion" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="exposicion" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="exposicion" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="exposicion" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="exposicion" value = "-2" checked></td>
             </tr>
             <tr>
                 <td><p>b.	Debates</p></td>
-                <td align="center"> <input type = "radio" name="debate" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="debate" value = "1"> </td>
                 <td align="center"> <input type = "radio" name="debate" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="debate" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="debate" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="debate" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> c.	Mesa Redonda</p></td>
-                <td align="center"> <input type = "radio" name="mesa" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="mesa" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="mesa" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="mesa" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="mesa" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="mesa" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> d.	Foros </p></td>
-                <td align="center"> <input type = "radio" name="foro" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="foro" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="foro" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="foro" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="foro" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="foro" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td> <p> e.	Implementación de  Juegos cooperativos </p> </td>
-                <td align="center"> <input type = "radio" name="juego" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="juego" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="juego" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="juego" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="juego" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="juego" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> f.	Asambleas de aula </p> </td>
-                <td align="center"> <input type = "radio" name="asamblea" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="asamblea" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="asamblea" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="asamblea" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="asamblea" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="asamblea" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> g.	Implemento la estrategia Ondas  </p> </td>
-                <td align="center"> <input type = "radio" name="estrate_onda" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="estrate_onda" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="estrate_onda" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="estrate_onda" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="estrate_onda" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="estrate_onda" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> h.	Implementó proyectos de aula  </p></td>
-                <td align="center"> <input type = "radio" name="proyec_aula" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="proyec_aula" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="proyec_aula" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="proyec_aula" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="proyec_aula" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="proyec_aula" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> i.	Propongo a cada estudiante la solución de un problema de área que debe exponer </p></td>
-                <td align="center"> <input type = "radio" name="expo_problema" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="expo_problema" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="expo_problema" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="expo_problema" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="expo_problema" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="expo_problema" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> j.	Implementación de jornadas de seguimiento a los acuerdos de convivencia del salón</p></td>
-                <td align="center"> <input type = "radio" name="jornada_seguimiento" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="jornada_seguimiento" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="jornada_seguimiento" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="jornada_seguimiento" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="jornada_seguimiento" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="jornada_seguimiento" value = "-2" checked ></td>
             </tr>
 
             <tr>
                 <td><p> k.	Nombro monitor de clase </p> </td>
-                <td align="center"> <input  type = "radio" name="monitor" value = "1" checked> </td>
+                <td align="center"> <input  type = "radio" name="monitor" value = "1" > </td>
                 <td align="center"> <input  type = "radio" name="monitor" value = "2" ></td>
                 <td align="center"> <input  type = "radio" name="monitor" value = "3" ></td>
                 <td align="center"> <input  type = "radio" name="monitor" value = "4" ></td>
+                <td align="center"> <input  type = "radio" name="monitor" value = "-2" checked ></td>
             </tr>
         </table>
         <!----------------------------------  tabla de acciones   ----------------------------- -->
@@ -1049,85 +1063,97 @@
                 <td>Algunas veces</td>
                 <td>Pocas veces</td>
                 <td>No he tenido que hacerlo</td>
+                <td>No responde </td>
 
             </tr>
             <tr>
                 <td><p> a.	Separar  a los estudiantes que se están peleando </p></td>
-                <td align="center"> <input type = "radio" name="separar_pelea" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="separar_pelea" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="separar_pelea" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="separar_pelea" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="separar_pelea" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="separar_pelea" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> b.	Hablar con los estudiantes que se pelearon para que reconozcan la falta</p></td>
-                <td align="center"> <input type = "radio" name="dialogo" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="dialogo" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="dialogo" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="dialogo" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="dialogo" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="dialogo" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> c.	Elaborar trabajos escritos o carteleras entre los estudiantes que se pelearon </p></td>
-                <td align="center"> <input type = "radio" name="trab_escrito" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="trab_escrito" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="trab_escrito" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="trab_escrito" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="trab_escrito" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="trab_escrito" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> d.	Ayudar a los estudiantes que se pelearon a controlar sus emociones antes de ir al diálogo </p> </td>
-                <td align="center"> <input type = "radio" name="ayuda" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="ayuda" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="ayuda" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="ayuda" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="ayuda" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="ayuda" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> e.	Facilitar la definición de acuerdos entre los estudiantes que se pelearon </p></td>
-                <td align="center"> <input type = "radio" name="acuerdo" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="acuerdo" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="acuerdo" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="acuerdo" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="acuerdo" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="acuerdo" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> f.	Proponer sanciones reparadoras entre los estudiantes que se pelearon </p> </td>
-                <td align="center"> <input type = "radio" name="sanciones" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="sanciones" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="sanciones" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="sanciones" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="sanciones" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="sanciones" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> g.	Remitir a los estudiantes que se pelearon con los mediadores  </p> </td>
-                <td align="center"> <input type = "radio" name="mediadores" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="mediadores" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="mediadores" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="mediadores" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="mediadores" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="mediadores" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td> <p> h.	Anotar las observaciones del conflicto en el observador de la IE  </p></td>
-                <td align="center"> <input type = "radio" name="anotar_observaciones" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="anotar_observaciones" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="anotar_observaciones" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="anotar_observaciones" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="anotar_observaciones" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="anotar_observaciones" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td> <p> i.	Aviso a las redes de apoyo </p> </td>
-                <td align="center"> <input type = "radio" name="redes_apoyo" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="redes_apoyo" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="redes_apoyo" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="redes_apoyo" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="redes_apoyo" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="redes_apoyo" value = "-2" checked ></td>
             </tr>
             <tr>
                 <td><p> j.	Reunión con el comité de convivencia-Invitados como comisaria de familia y personero municipal</p></td>
-                <td align="center"> <input type = "radio" name="reunion" value = "1" checked> </td>
+                <td align="center"> <input type = "radio" name="reunion" value = "1" > </td>
                 <td align="center"> <input type = "radio" name="reunion" value = "2" ></td>
                 <td align="center"> <input type = "radio" name="reunion" value = "3" ></td>
                 <td align="center"> <input type = "radio" name="reunion" value = "4" ></td>
+                <td align="center"> <input type = "radio" name="reunion" value = "-2" checked ></td>
             </tr>
 
             <tr>
                 <td><p> k.	Citar a los padres de familia para establecer acuerdos </p></td>
-                <td align="center"> <input  type = "radio" name="citacion" value = "1" checked> </td>
+                <td align="center"> <input  type = "radio" name="citacion" value = "1" > </td>
                 <td align="center"> <input  type = "radio" name="citacion" value = "2" ></td>
                 <td align="center"> <input  type = "radio" name="citacion" value = "3" ></td>
                 <td align="center"> <input  type = "radio" name="citacion" value = "4" ></td>
+                <td align="center"> <input  type = "radio" name="citacion" value = "-2" checked ></td>
             </tr>
         </table>
         <!-- ---------------------------------------------------------------------------------  -->

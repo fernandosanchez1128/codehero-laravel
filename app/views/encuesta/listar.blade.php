@@ -53,7 +53,7 @@
 
                                     @foreach($encuestas as $encuesta)
                                     <tr>
-                                        <td>{{$encuesta->id}}</td>
+                                        <td>{{$encuesta->id_encuesta}}</td>
                                         <td>{{$encuesta->nombre_profesional}}</td>
                                         <td>{{$encuesta->a1_nombre_ie}}</td>
                                         <td>{{$encuesta->a2_nombre_sede}}</td>

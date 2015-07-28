@@ -229,6 +229,11 @@
                     if (obj.checked == true) {
                         element1.disabled = false;
                         element2.disabled = false;
+                        if (num == 8){
+                            var element = document.getElementById("otro13");
+                            element.disabled = false;
+                            element.placeholder = "digite el nombre del proceso de formación";
+                        }
                     }
                     else
                     {
@@ -238,7 +243,14 @@
                         element2.disabled = true;
                         element2.value = "";
                         element2.placeholder = "";
+                        if (num == 8){
+                            var element = document.getElementById("otro13");
+                            element.disabled = true;
+                            element.placeholder = "otro";
+                            element.value = "";
+                        }
                     }
+
                     break;
                 //practicas pedagogicas
                 case 4:
@@ -304,13 +316,13 @@
                         'nameIE': {required:true,min:1},
                         'nameSede': "required",
                         'nameDocente': "required",
-                        'edad': {required : true , min:14, max:800},
+                        'edad': {required : true , min:-2, max:80},
                         'municipio' : "required",
-                        'experiencia' : {required:true, min:1,max:60},
-                        'experienciaSede' : {required:true, min:1, max:60},
+                        'experiencia' : {required:true, min:-2,max:60},
+                        'experienciaSede' : {required:true, min:-2, max:60},
                         'nombreTitulo[]':"required",
-                        'duracion[]' : "required digits",
-                        'tiempo_atras[]' : "required digits",
+                        'duracion[]' : "required",
+                        'tiempo_atras[]' : "required",
                         'jornada[]': {required: true, minlength: 1}
                     },
                     messages:
@@ -330,12 +342,12 @@
                         'experiencia' :
                         {
                             required: "Por digite los años de experiencia como profesor en la sede (numero)",
-                            min:"los años deben ser mayor a igual a 1",
+                            min:"digite el numero con . ej: 1.2 (valor minimo -2)",
                             max:"los años deben ser menor o igual a 60"
                         },
                         'experienciaSede' : {
                             required: "Por digite los años de experiencia como profesor en la sede (numero)",
-                            min:"los años deben ser mayor a igual a 1",
+                            min:"los años deben ser mayor a igual a -2 (-2 no responde)",
                             max:"los años deben ser menor o igual a 60"
                         },
                         'nombreTitulo[]':"",
@@ -550,6 +562,15 @@
           <label for="cedad"> 4. Edad (required)</label>
           <input id="cedad" type="number"  name="edad">
         </p>
+            <p>
+          <label for="csexo"> 5. Sexo</label>
+                <select id="csexo" name="sexo" >
+                    <option value = "1"> Femenino</option>
+                    <option value = "2"> Masculino </option>
+                    </select>
+        </p>
+
+
         <p>
           <label for="cmunicipio"> 6. Municipio Donde Vive</label>
           <input id="cmunicipio" type="text"  name="municipio" >
@@ -563,6 +584,7 @@
           <option value = "3"> Union Libre </option>
           <option value = "4"> Divorciado </option>
           <option value = "5"> Viudo </option>
+          <option value = "-2"> Viudo </option>
           </select>
         </p>
         </fieldset>
@@ -597,16 +619,17 @@
         </p>
         <p>
           <label for="cexperiencia">9. ¿Cuantos años lleva laborando como docente?</label>
-          <input id="cexperiencia" type="number" name="experiencia" >
+          <input id="cexperiencia" type="text" name="experiencia" >
         </p>
         <p>
           <label for="cexperienciaSede">10. ¿Cuantos años lleva laborando como docente en la sede?</label>
-          <input id="cexperienciaSede" type="number" name="experienciaSede" required>
+          <input id="cexperienciaSede" type="text" name="experienciaSede" required>
         </p>
         <p>
           <label for="cjornada">11. ¿Dentro de la sede educativa, en qué jornada o jornadas labora?</label>
           <p> <input id="jornada" type = "radio"  name="jornada" value = "1" checked> mañana </input> </p>
           <p> <input id="jornada" type = "radio"  name="jornada" value = "2"> tarde  </input> </p>
+          <p> <input id="jornada" type = "radio"  name="jornada" value = "3"> ambas  </input> </p>
             <label for = "jornada[]" class="error" generated = "true"> </label>
         </p>
         <p>
@@ -754,39 +777,39 @@
 	<tr>
 		<td> Convivencia</td>
 		<td> <input  type="checkbox" name="areas[]" value="a" onclick = "activateText(this, 1, 'tiempo',3)" > </td>
-		<td> <input type="number" id="tiempo1" name="duracion[]"  min =1 max="80" required disabled> </td>
-		<td> <input type="number" id="tiem_fini1" name="tiempo_atras[]" min =0   required disabled> </td>
+		<td> <input type="number" id="tiempo1" name="duracion[]"  min =-2 max="80" required disabled> </td>
+		<td> <input type="number" id="tiem_fini1" name="tiempo_atras[]" min =-2   required disabled> </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 	<tr>
 		<td> Ciudadania y derechos humanos </td>
 		<td> <input type="checkbox" name="areas[]" value="b"  onclick = "activateText(this, 2, 'tiempo',3)" > </td>
-		<td> <input type="number" id="tiempo2" name="duracion[]" min =1 max="80" required disabled  > </td>
-		<td> <input type="number" id="tiem_fini2"  name="tiempo_atras[]" min =0  required disabled> </td>
+		<td> <input type="number" id="tiempo2" name="duracion[]" min =-2 max="80" required disabled  > </td>
+		<td> <input type="number" id="tiem_fini2"  name="tiempo_atras[]" min =-2  required disabled> </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 	<!-- ------------------------------------------------------------------------- -->
 	<tr>
 		<td> Sexualidad </td>
 		<td> <input type="checkbox" name="areas[]" value="c" onclick = "activateText(this, 3, 'tiempo',3)" > </td>
-		<td> <input type="number" id="tiempo3" name="duracion[]" min =1 max="80" required disabled > </td>
-		<td> <input type="number" id="tiem_fini3" name="tiempo_atras[]" min =0  required disabled> </td>
+		<td> <input type="number" id="tiempo3" name="duracion[]" min =-2 max="80" required disabled > </td>
+		<td> <input type="number" id="tiem_fini3" name="tiempo_atras[]" min =-2  required disabled> </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 	<!-- ------------------------------------------------------------------------- -->
 	<tr>
 		<td> Medio ambiente </td>
 		<td> <input type="checkbox" name="areas[]" value="d" onclick = "activateText(this, 4, 'tiempo',3)"> </td>
-		<td> <input type="number" id="tiempo4" name="duracion[]" min =1 max="80" required disabled > </td>
-		<td> <input type="number" id="tiem_fini4"  name="tiempo_atras[]" min =0  required disabled> </td>
+		<td> <input type="number" id="tiempo4" name="duracion[]" min =-2 max="80" required disabled > </td>
+		<td> <input type="number" id="tiem_fini4"  name="tiempo_atras[]" min =-2  required disabled> </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 	<!-- ------------------------------------------------------------------------- -->
 	<tr>
 		<td> Prevencion de consumo de sustancias psicoactivas </td>
 		<td> <input type="checkbox" name="areas[]" value="e" onclick = "activateText(this, 5, 'tiempo',3)"> </td>
-		<td> <input type="number" id="tiempo5"  name="duracion[]" min =1 max="80" required disabled > </td>
-		<td> <input type="number" id="tiem_fini5" name="tiempo_atras[]" min =0  required disabled > </td>
+		<td> <input type="number" id="tiempo5"  name="duracion[]" min =-2 max="80" required disabled > </td>
+		<td> <input type="number" id="tiem_fini5" name="tiempo_atras[]" min =-2  required disabled > </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 
@@ -794,17 +817,24 @@
 	<tr>
 		<td> Manejo de conflictos y/o mediación escolar </td>
 		<td> <input type="checkbox" name="areas[]" value="f" onclick = "activateText(this, 6, 'tiempo',3)" > </td>
-		<td> <input type="number" id="tiempo6" name="duracion[]" min =1 max="80" required disabled > </td>
-		<td> <input type="number" id="tiem_fini6" name="tiempo_atras[]" min =0 required disabled  > </td>
+		<td> <input type="number" id="tiempo6" name="duracion[]" min =-2 max="80" required disabled > </td>
+		<td> <input type="number" id="tiem_fini6" name="tiempo_atras[]" min =-2 required disabled  > </td>
 	</tr>
 	<!-- ------------------------------------------------------------------------- -->
 	<!-- ------------------------------------------------------------------------- -->
 	<tr>
 		<td> Manejo y prevencion de acoso escolar</td>
 		<td> <input type="checkbox" name="areas[]" value="g" onclick = "activateText(this, 7, 'tiempo',3)" > </td>
-		<td> <input type="number" id="tiempo7" name="duracion[]"  min =1 max="80"  required disabled> </td>
-		<td> <input type="number" id="tiem_fini7" name="tiempo_atras[]" min =0 required  disabled> </td>
+		<td> <input type="number" id="tiempo7" name="duracion[]"  min =-2 max="80"  required disabled> </td>
+		<td> <input type="number" id="tiem_fini7" name="tiempo_atras[]" min =-2 required  disabled> </td>
 	</tr>
+            <tr>
+            <td><input type="text" id = "otro13" name="otro13" placeholder ="otro" disabled > </td>
+            <td> <input type="checkbox" name="areas[]" value="h" onclick = "activateText(this, 8, 'tiempo',3)" > </td>
+            <td> <input type="number" id="tiempo8" name="duracion[]"  min =-2 max="80"  required disabled> </td>
+            <td> <input type="number" id="tiem_fini8" name="tiempo_atras[]" min =-2 required  disabled> </td>
+            </tr>
+
 	<!-- ------------------------------------------------------------------------- -->
 </table>
 	</p>

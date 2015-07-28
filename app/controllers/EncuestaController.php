@@ -18,6 +18,8 @@ class EncuestaController extends BaseController {
         $encuesta->a2_nombre_sede = Input::get('nameSede');
         $encuesta->a3_nombre_docente = Input::get('nameDocente');
         $encuesta->a4_edad =Input::get('edad');
+        $encuesta->a5_sexo =Input::get('sexo');
+
         $encuesta->a6_municipio = Input::get('municipio');
         $encuesta->a7_estado_civil = Input::get('estado');
 
@@ -295,7 +297,10 @@ class EncuestaController extends BaseController {
                     case "d": $name = 'ambiente';break;
                     case "e": $name = 'prevencion';break;
                     case "f": $name = 'mediacion'; break;
-                    default : $name = 'acoso';
+                    case "g": $name = 'acoso'; break;
+                    default :
+                        $name = 'otro';
+                        $encuesta->c13_h_nombre = Input::get ('otro13');
                 }
                 $nombre_area = 'c13_'.$area.'_'.$name;
                 $name_duracion ='c13_'.$area.'_'.'duracion';

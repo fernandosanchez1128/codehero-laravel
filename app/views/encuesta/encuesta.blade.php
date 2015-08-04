@@ -629,7 +629,7 @@
           <label for="cjornada">11. ¿Dentro de la sede educativa, en qué jornada o jornadas labora?</label>
           <p> <input id="jornada" type = "radio"  name="jornada" value = "1" checked> mañana </input> </p>
           <p> <input id="jornada" type = "radio"  name="jornada" value = "2"> tarde  </input> </p>
-          <p> <input id="jornada" type = "radio"  name="jornada" value = "3"> ambas  </input> </p>
+          <p> <input id="jornada" type = "radio"  name="jornada" value = "3"> ambas  </input> </p> 
             <label for = "jornada[]" class="error" generated = "true"> </label>
         </p>
         <p>

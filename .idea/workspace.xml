@@ -31,12 +31,15 @@
       <file leaf-file-name="encuesta.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/encuesta/encuesta.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33195877" vertical-offset="10566" max-vertical-offset="20468">
-              <caret line="631" column="99" selection-start-line="631" selection-start-column="99" selection-end-line="631" selection-end-column="99" />
+            <state vertical-scroll-proportion="0.035051547" vertical-offset="14484" max-vertical-offset="20689">
+              <caret line="853" column="32" selection-start-line="853" selection-start-column="32" selection-end-line="853" selection-end-column="32" />
               <folding>
-                <marker date="1438724327594" expanded="true" signature="28644:28655" placeholder="..." />
-                <marker date="1438724327594" expanded="true" signature="28910:28921" placeholder="..." />
-                <marker date="1438724327594" expanded="true" signature="30039:30050" placeholder="..." />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#3;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#4;n#tr#0;n#table#1;n#fieldset#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1438725558397" expanded="true" signature="28643:28654" placeholder="..." />
+                <marker date="1438725558397" expanded="true" signature="28909:28920" placeholder="..." />
+                <marker date="1438725558397" expanded="true" signature="30038:30049" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -373,9 +376,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1438724327594" expanded="true" signature="28644:28655" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="28910:28921" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="30039:30050" placeholder="..." />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#3;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#1;n#fieldset#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1438725558397" expanded="true" signature="28643:28654" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="28909:28920" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="30038:30049" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -400,9 +406,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1438724327594" expanded="true" signature="28644:28655" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="28910:28921" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="30039:30050" placeholder="..." />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#3;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#1;n#fieldset#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1438725558397" expanded="true" signature="28643:28654" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="28909:28920" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="30038:30049" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -455,9 +464,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1438724327594" expanded="true" signature="28644:28655" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="28910:28921" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="30039:30050" placeholder="..." />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#3;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#1;n#fieldset#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1438725558397" expanded="true" signature="28643:28654" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="28909:28920" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="30038:30049" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -510,9 +522,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="670" column="17" selection-start-line="670" selection-start-column="17" selection-end-line="670" selection-end-column="17" />
           <folding>
-            <marker date="1438724327594" expanded="true" signature="28644:28655" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="28910:28921" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="30039:30050" placeholder="..." />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#3;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#1;n#fieldset#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1438725558397" expanded="true" signature="28643:28654" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="28909:28920" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="30038:30049" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -565,9 +580,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1438724327594" expanded="true" signature="28644:28655" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="28910:28921" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="30039:30050" placeholder="..." />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#3;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#1;n#fieldset#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1438725558397" expanded="true" signature="28643:28654" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="28909:28920" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="30038:30049" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -613,9 +631,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1438724327594" expanded="true" signature="28644:28655" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="28910:28921" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="30039:30050" placeholder="..." />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#3;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#1;n#fieldset#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1438725558397" expanded="true" signature="28643:28654" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="28909:28920" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="30038:30049" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -731,12 +752,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/encuesta/encuesta.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33195877" vertical-offset="10566" max-vertical-offset="20468">
-          <caret line="631" column="99" selection-start-line="631" selection-start-column="99" selection-end-line="631" selection-end-column="99" />
+        <state vertical-scroll-proportion="0.035051547" vertical-offset="14484" max-vertical-offset="20689">
+          <caret line="853" column="32" selection-start-line="853" selection-start-column="32" selection-end-line="853" selection-end-column="32" />
           <folding>
-            <marker date="1438724327594" expanded="true" signature="28644:28655" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="28910:28921" placeholder="..." />
-            <marker date="1438724327594" expanded="true" signature="30039:30050" placeholder="..." />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#3;n#fieldset#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#1;n#fieldset#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1438725558397" expanded="true" signature="28643:28654" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="28909:28920" placeholder="..." />
+            <marker date="1438725558397" expanded="true" signature="30038:30049" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -629,7 +629,7 @@
           <label for="cjornada">11. ¿Dentro de la sede educativa, en qué jornada o jornadas labora?</label>
           <p> <input id="jornada" type = "radio"  name="jornada" value = "1" checked> mañana </input> </p>
           <p> <input id="jornada" type = "radio"  name="jornada" value = "2"> tarde  </input> </p>
-          <p> <input id="jornada" type = "radio"  name="jornada" value = "3"> ambas  </input> </p> 
+          <p> <input id="jornada" type = "radio"  name="jornada" value = "3"> ambas  </input> </p>
             <label for = "jornada[]" class="error" generated = "true"> </label>
         </p>
         <p>
@@ -863,7 +863,9 @@
                 <td style = "width:50px"> <p align= "center"></p></td>
                 <td>Casi todos los dias</td>
                 <td>Algunos dias</td>
-                <td>Un dia</td>
+                <td style = "width:50px">Un dia </td>
+                <td >No responde</td>
+
             </tr>
 
             <tr> <label for="estrategias[]" generated="true" class="error"></label> </tr>
@@ -873,6 +875,7 @@
                 <td> <input type = "radio" name="frecuencia1" value = "1" disabled id ="radio1A"> </td>
                 <td> <input type = "radio" name="frecuencia1" value = "2" disabled id ="radio1B"></td>
                 <td> <input type = "radio" name="frecuencia1" value = "3" disabled id ="radio1C"></td>
+                <td> <input type = "radio" name="frecuencia1" value = "-2" disabled id ="radio1D"></td>
             </tr>
 
             <tr>
@@ -881,6 +884,7 @@
                 <td> <input type = "radio" name="frecuencia2" value = "1" disabled id ="radio2A"> </td>
                 <td> <input type = "radio" name="frecuencia2" value = "2" disabled id ="radio2B"></td>
                 <td> <input type = "radio" name="frecuencia2" value = "3" disabled id ="radio2C"></td>
+                <td> <input type = "radio" name="frecuencia2" value = "-2" disabled id ="radio2D"></td>
             </tr>
             <tr>
                 <td><p> c.	Habla con los estudiantes-permanentemente-para conocer su historia de vida </p> </td>
@@ -888,6 +892,7 @@
                 <td> <input type = "radio" name="frecuencia3" value = "1" disabled id ="radio3A"> </td>
                 <td> <input type = "radio" name="frecuencia3" value = "2" disabled id ="radio3B"></td>
                 <td> <input type = "radio" name="frecuencia3" value = "3" disabled id ="radio3C"></td>
+                <td> <input type = "radio" name="frecuencia3" value = "-2" disabled id ="radio3D"></td>
             </tr>
 
             <tr>
@@ -896,6 +901,7 @@
                 <td> <input type = "radio" name="frecuencia4" value = "1" disabled id ="radio4A"> </td>
                 <td> <input type = "radio" name="frecuencia4" value = "2" disabled id ="radio4B"></td>
                 <td> <input type = "radio" name="frecuencia4" value = "3" disabled id ="radio4C"></td>
+                <td> <input type = "radio" name="frecuencia4" value = "-2" disabled id ="radio4D"></td>
             </tr>
             <tr>
                 <td><p> e.	Realizar Lecturas para reforzar valores y autoestima</p></td>
@@ -903,6 +909,7 @@
                 <td> <input type = "radio" name="frecuencia5" value = "1" disabled id ="radio5A"> </td>
                 <td> <input type = "radio" name="frecuencia5" value = "2" disabled id ="radio5B"></td>
                 <td> <input type = "radio" name="frecuencia5" value = "3" disabled id ="radio5C"></td>
+                <td> <input type = "radio" name="frecuencia5" value = "-2" disabled id ="radio5D"></td>
             </tr>
             <tr>
                 <td><p> f.	Ponerlos a trabajar en  equipo </p></td>
@@ -910,6 +917,7 @@
                 <td> <input type = "radio" name="frecuencia6" value = "1" disabled id ="radio6A"> </td>
                 <td> <input type = "radio" name="frecuencia6" value = "2" disabled id ="radio6B"></td>
                 <td> <input type = "radio" name="frecuencia6" value = "3" disabled id ="radio6C"></td>
+                <td> <input type = "radio" name="frecuencia6" value = "-2" disabled id ="radio6D"></td>
             </tr>
             <tr>
                 <td><p> g.	Realizar Pausas activas para motivar la atención </p> </td>
@@ -917,6 +925,7 @@
                 <td> <input type = "radio" name="frecuencia7" value = "1" disabled id ="radio7A"> </td>
                 <td> <input type = "radio" name="frecuencia7" value = "2" disabled id ="radio7B"></td>
                 <td> <input type = "radio" name="frecuencia7" value = "3" disabled id ="radio7C"></td>
+                <td> <input type = "radio" name="frecuencia7" value = "-2" disabled id ="radio7D"></td>
             </tr>
 
             <tr>
@@ -925,6 +934,7 @@
                 <td> <input type = "radio" name="frecuencia8" value = "1" disabled id ="radio8A"> </td>
                 <td> <input type = "radio" name="frecuencia8" value = "2" disabled id ="radio8B"></td>
                 <td> <input type = "radio" name="frecuencia8" value = "3" disabled id ="radio8C"></td>
+                <td> <input type = "radio" name="frecuencia8" value = "-2" disabled id ="radio8D"></td>
             </tr>
             <tr>
                 <td><p> i.	Realizar Asambleas de aula </p></td>
@@ -932,6 +942,7 @@
                 <td> <input type = "radio" name="frecuencia9" value = "1" disabled id ="radio9A"> </td>
                 <td> <input type = "radio" name="frecuencia9" value = "2" disabled id ="radio9B"></td>
                 <td> <input type = "radio" name="frecuencia9" value = "3" disabled id ="radio9C"></td>
+                <td> <input type = "radio" name="frecuencia9" value = "-2" disabled id ="radio9D"></td>
             </tr>
 
             <tr>
@@ -943,6 +954,7 @@
                 <td> <input type = "radio" name="frecuencia10" value = "1" disabled id ="radio10A"> </td>
                 <td> <input type = "radio" name="frecuencia10" value = "2" disabled id ="radio10B"></td>
                 <td> <input type = "radio" name="frecuencia10" value = "3" disabled id ="radio10C"></td>
+                <td> <input type = "radio" name="frecuencia10" value = "-2" disabled id ="radio10D"></td>
             </tr>
             <tr>
                 <td><input id = "estra_txt11" type = "text" name="otros2"  disabled  required></td>
@@ -950,6 +962,7 @@
                 <td> <input type = "radio" name="frecuencia11" value = "1" disabled id ="radio11A"> </td>
                 <td> <input type = "radio" name="frecuencia11" value = "2" disabled id ="radio11B"></td>
                 <td> <input type = "radio" name="frecuencia11" value = "3" disabled id ="radio11C"></td>
+                <td> <input type = "radio" name="frecuencia11" value = "-2" disabled id ="radio11D"></td>
             </tr>
             </table>
         <br>

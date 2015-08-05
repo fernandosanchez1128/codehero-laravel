@@ -10,6 +10,7 @@ create table encuesta
 	a2_nombre_sede varchar (40) ,
 	a3_nombre_docente varchar (20),
 	a4_edad integer,
+	a5_sexo integer,
 	a6_municipio varchar (40),
 	a7_estado_civil  integer,
 	

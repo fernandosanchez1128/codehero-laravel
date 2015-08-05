@@ -257,11 +257,13 @@
                     var element1 = document.getElementById(name + num + "A");
                     var element2 = document.getElementById(name + num + "B");
                     var element3 = document.getElementById(name + num + "C");
+                    var element4 = document.getElementById(name + num + "D");
                     if (obj.checked == true) {
                         element1.disabled = false;
                         element1.checked = true;
                         element2.disabled = false;
                         element3.disabled = false;
+                        element4.disabled = false;
                         if (num == 10 || num == 11)
                         {
                             var element4 = document.getElementById("estra_txt" + num);
@@ -277,12 +279,14 @@
                         element2.checked = false;
                         element3.disabled = true;
                         element3.checked = false;
+                        element4.disabled = true;
+                        element4.checked = false;
                         if (num == 10 || num == 11)
                         {
                             var element4 = document.getElementById("estra_txt" + num);
                             element4.disabled = true;
                             element4.placeholder = "";
-                            element4.value = "";
+                            elem    ent4.value = "";
                         }
                     }
                  break;

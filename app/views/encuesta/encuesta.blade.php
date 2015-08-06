@@ -286,7 +286,7 @@
                             var element4 = document.getElementById("estra_txt" + num);
                             element4.disabled = true;
                             element4.placeholder = "";
-                            elem    ent4.value = "";
+                            element4.value = "";
                         }
                     }
                  break;

@@ -41,6 +41,7 @@ CREATE TABLE `encuesta` (
   `b9_exp_docencia` float DEFAULT NULL,
   `b10_exp_sede` float DEFAULT NULL,
   `b11_jornada` int(11) DEFAULT NULL,
+  
   `b12_a_sociales` tinyint(1) DEFAULT '0',
   `b12_a_grado0` int(11) DEFAULT '0',
   `b12_a_grado1` int(11) DEFAULT '0',
@@ -65,6 +66,7 @@ CREATE TABLE `encuesta` (
   `b12_a_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_a_grado11` int(11) DEFAULT '0',
   `b12_a_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_b_etica` tinyint(1) DEFAULT '0',
   `b12_b_grado0` int(11) DEFAULT '0',
   `b12_b_grado1` int(11) DEFAULT '0',
@@ -89,6 +91,7 @@ CREATE TABLE `encuesta` (
   `b12_b_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_b_grado11` int(11) DEFAULT '0',
   `b12_b_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_c_ciencias` tinyint(1) DEFAULT '0',
   `b12_c_grado0` int(11) DEFAULT '0',
   `b12_c_grado1` int(11) DEFAULT '0',
@@ -113,6 +116,7 @@ CREATE TABLE `encuesta` (
   `b12_c_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_c_grado11` int(11) DEFAULT '0',
   `b12_c_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_d_matematicas` tinyint(1) DEFAULT '0',
   `b12_d_grado0` int(11) DEFAULT '0',
   `b12_d_grado1` int(11) DEFAULT '0',
@@ -137,6 +141,7 @@ CREATE TABLE `encuesta` (
   `b12_d_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_d_grado11` int(11) DEFAULT '0',
   `b12_d_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_e_tecnologia` tinyint(1) DEFAULT '0',
   `b12_e_grado0` int(11) DEFAULT '0',
   `b12_e_grado1` int(11) DEFAULT '0',
@@ -161,6 +166,7 @@ CREATE TABLE `encuesta` (
   `b12_e_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_e_grado11` int(11) DEFAULT '0',
   `b12_e_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_f_fisica` tinyint(1) DEFAULT '0',
   `b12_f_grado0` int(11) DEFAULT '0',
   `b12_f_grado1` int(11) DEFAULT '0',
@@ -185,6 +191,7 @@ CREATE TABLE `encuesta` (
   `b12_f_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_f_grado11` int(11) DEFAULT '0',
   `b12_f_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_g_quimica` tinyint(1) DEFAULT '0',
   `b12_g_grado0` int(11) DEFAULT '0',
   `b12_g_grado1` int(11) DEFAULT '0',
@@ -209,6 +216,7 @@ CREATE TABLE `encuesta` (
   `b12_g_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_g_grado11` int(11) DEFAULT '0',
   `b12_g_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_h_lenguaje` tinyint(1) DEFAULT '0',
   `b12_h_grado0` int(11) DEFAULT '0',
   `b12_h_grado1` int(11) DEFAULT '0',
@@ -233,6 +241,7 @@ CREATE TABLE `encuesta` (
   `b12_h_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_h_grado11` int(11) DEFAULT '0',
   `b12_h_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_i_seg_lengua` tinyint(1) DEFAULT '0',
   `b12_i_grado0` int(11) DEFAULT '0',
   `b12_i_grado1` int(11) DEFAULT '0',
@@ -257,6 +266,7 @@ CREATE TABLE `encuesta` (
   `b12_i_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_i_grado11` int(11) DEFAULT '0',
   `b12_i_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_j_deportes` tinyint(1) DEFAULT '0',
   `b12_j_grado0` int(11) DEFAULT '0',
   `b12_j_grado1` int(11) DEFAULT '0',
@@ -281,6 +291,7 @@ CREATE TABLE `encuesta` (
   `b12_j_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_j_grado11` int(11) DEFAULT '0',
   `b12_j_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_k_artes` tinyint(1) DEFAULT '0',
   `b12_k_grado0` int(11) DEFAULT '0',
   `b12_k_grado1` int(11) DEFAULT '0',
@@ -305,6 +316,7 @@ CREATE TABLE `encuesta` (
   `b12_k_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_k_grado11` int(11) DEFAULT '0',
   `b12_k_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_l_religion` tinyint(1) DEFAULT '0',
   `b12_l_grado0` int(11) DEFAULT '0',
   `b12_l_grado1` int(11) DEFAULT '0',
@@ -329,13 +341,16 @@ CREATE TABLE `encuesta` (
   `b12_l_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_l_grado11` int(11) DEFAULT '0',
   `b12_l_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_m_prim_infancia` tinyint(1) DEFAULT '0',
   `b12_m_observaciones` text COLLATE utf8_bin,
+  
   `b12_n_escuela_nueva` tinyint(1) DEFAULT '0',
   `b12_n_primaria` tinyint(1) DEFAULT '0',
   `b12_n_primaria_grados` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_n_bachillerato` tinyint(1) DEFAULT '0',
   `b12_n_bachillerato_grados` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_o_otra_asig1` varchar(100) COLLATE utf8_bin DEFAULT '',
   `b12_o_grado0` int(11) DEFAULT '0',
   `b12_o_grado1` int(11) DEFAULT '0',
@@ -360,6 +375,7 @@ CREATE TABLE `encuesta` (
   `b12_o_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_o_grado11` int(11) DEFAULT '0',
   `b12_o_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `b12_p_otra_asig2` varchar(100) COLLATE utf8_bin DEFAULT '',
   `b12_p_grado0` int(11) DEFAULT '0',
   `b12_p_grado1` int(11) DEFAULT '0',
@@ -384,6 +400,7 @@ CREATE TABLE `encuesta` (
   `b12_p_nivel10` varchar(40) COLLATE utf8_bin DEFAULT '',
   `b12_p_grado11` int(11) DEFAULT '0',
   `b12_p_nivel11` varchar(40) COLLATE utf8_bin DEFAULT '',
+  
   `c13_a_convivencia` tinyint(1) DEFAULT '0',
   `c13_a_duracion` float DEFAULT NULL,
   `c13_a_finalizo` float DEFAULT NULL,
@@ -409,6 +426,7 @@ CREATE TABLE `encuesta` (
   
   `c14_a_aplica` int(11) DEFAULT NULL,
   `c14_b_aplicacion` text COLLATE utf8_bin,
+  
   `c15_a_normas` tinyint(1) DEFAULT '0',
   `c15_a_frecuencia` int(11) DEFAULT '0',
   `c15_b_fort_valores` tinyint(1) DEFAULT '0',
@@ -433,6 +451,8 @@ CREATE TABLE `encuesta` (
   `c15_k_otro2` tinyint(1) DEFAULT '0',
   `c15_k_otro2_nombre` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   `c15_k_frecuencia` int(11) DEFAULT '0',
+  
+  
   `c16_exposicion` int(11) DEFAULT NULL,
   `c16_debate` int(11) DEFAULT NULL,
   `c16_mesa_redonda` int(11) DEFAULT NULL,
@@ -444,6 +464,7 @@ CREATE TABLE `encuesta` (
   `c16_expo_problema` int(11) DEFAULT NULL,
   `c16_jornada_seguimiento` int(11) DEFAULT NULL,
   `c16_monitor` int(11) DEFAULT NULL,
+  
   `c17_separar_pelea` int(11) DEFAULT NULL,
   `c17_dialogo` int(11) DEFAULT NULL,
   `c17_trab_escrito` int(11) DEFAULT NULL,
@@ -455,8 +476,10 @@ CREATE TABLE `encuesta` (
   `c17_redes_apoyo` int(11) DEFAULT NULL,
   `c17_reunion` int(11) DEFAULT NULL,
   `c17_citacion` int(11) DEFAULT NULL,
+  
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;

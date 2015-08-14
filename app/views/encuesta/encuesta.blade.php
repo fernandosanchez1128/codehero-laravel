@@ -591,11 +591,11 @@
           <option value = "-2"> Viudo </option>
           </select>
         </p>
-        </fieldset>
+        </FIELDSET>
+            <fieldset>
 
-        <fieldset>
-        <legend> Datos Laborales</legend>
-        <p>
+                <legend> Datos Laborales</legend>
+                <p>
           8. Escolaridad (marque sólo el grado más alto)<br>
           <table id= "escol" >
         <tr>
@@ -638,6 +638,8 @@
         </p>
         <p>
         <br>
+
+
         12. Por Favor seleccione las asignaturas en las que enseña y los grados en los que lo enseña.
             en la casilla de abajo digite los niveles separados por un -.
         <br> <br>
@@ -653,8 +655,12 @@
                     <td align='center'> 9°</td> <td align='center'> 10°</td>
                     <td align='center'>11°</td>
                 </tr>
+
          <?php
-                $array = array("ciencias sociales", "Etica, democracia y valores", "ciencias Naturales", "Matemáticas",
+//</editor-fold>
+                    //<editor-fold desc="Description">
+
+                    $array = array("ciencias sociales", "Etica, democracia y valores", "ciencias Naturales", "Matemáticas",
                         "Tecnología e informática","fisica","Química","Humanidades y lenguaje",
                         "Segunda lengua: Ingles u otros", "Educacion fisica - Deportes",
                         "Artes: pintura, teatro, música,  manualidades","Religion");
@@ -726,7 +732,7 @@
         }
 
         ?>
-	
+
 	</table>
             <table>
                 <tr>
@@ -1207,8 +1213,8 @@
         <p><input class="submit" id="submit" type="submit" value="Enviar Formulario" disabled> </p>
 	</fieldset>
 
-	
-	
+
+
 	</form>
   
 

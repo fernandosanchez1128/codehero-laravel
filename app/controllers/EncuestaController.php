@@ -313,7 +313,7 @@ class EncuestaController extends BaseController {
             }
         }
 
-        /** ******************** fin tabla de pregunta 13  *********************** **/
+        /** ******************** fi n tabla de pregunta 13  *********************** **/
 
         echo("guardando la pregunta 15");
         /** **************** inicio tabla de pregunta 15 *********************** **/
